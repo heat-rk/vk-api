@@ -103,7 +103,7 @@
 	        });
 ```
 Вы переопределяете нужные вам методы, на которые будут приходить сообщения в формате JSON
-Более подробную информацию можно найти [здесь](https://vk.com/dev/bots_longpoll)
+Более подробную информацию можно найти [здесь](https://vk.com/dev/bots_longpoll).
 
 ## User Long Poll API
 
@@ -125,3 +125,43 @@
 	        });
 ```
 Вы переопределяете метод "onResponse", на который будут приходить сообщения в формате JSON
+Более подробную информацию можно найти [здесь](https://vk.com/dev/using_longpoll).
+
+# Streaming API
+## Создание объекта
+```java
+	StreamingApi streamingApi = new StreamingApi(VK_API);
+```
+
+## Правила
+
+Добавление правила
+```java
+	streamingApi.rules.add(VALUE, TAG);
+```
+
+Удаление правила
+```java
+	streamingApi.rules.delete(TAG);
+```
+
+Получение правил
+```java
+	streamingApi.rules.get();
+```
+
+## Поток
+
+Чтение потока
+```java
+	streamingApi.stream.setMessageHandler(new MessageHandler() {
+            @Override
+            public void onMessage(JsonHandler message) {
+                //some code...
+            }
+        });
+```
+
+Вы переопределяете метод "onMessage", на который будут приходить сообщения в формате JSON
+Более подробную информацию можно найти [здесь](https://vk.com/dev/streaming_api_docs).
+
