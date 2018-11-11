@@ -5,7 +5,7 @@
 # Зависимости, используемые в библиотеке
 
 * [JSON-SIMPLE](https://github.com/fangyidong/json-simple) версия 1.1.1.
-* [Apache HttpClient](http://hc.apache.org/httpcomponents-client-4.5.x/index.html) версия 4.5.3
+* [Apache HttpClient и Apache HttpMime](http://hc.apache.org/httpcomponents-client-4.5.x/index.html) версия 4.5.3
 * [Java-Websocket](https://github.com/TooTallNate/Java-WebSocket) версия 1.3.9
 
 # Начало
