@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 /**
  * Класс для осуществления HTTP DELETE запроса.
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  */
 public class HttpDelete {
     public static String getResult(String url, HttpEntity reqEntity, String contentType) {

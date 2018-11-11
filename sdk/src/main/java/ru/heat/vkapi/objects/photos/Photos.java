@@ -7,7 +7,7 @@ import ru.heat.vkapi.utils.Request;
 /**
  * Класс для работы с методами объекта Photos.
  * Подробнее на https://vk.com/dev/photos
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class Photos {

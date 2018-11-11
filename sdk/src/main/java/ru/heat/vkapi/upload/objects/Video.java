@@ -9,7 +9,7 @@ import ru.heat.vkapi.utils.Request;
 
 /**
  * Класс для загрузки видео.
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 import java.io.File;

@@ -6,7 +6,7 @@ import ru.heat.vkapi.utils.Request;
 /**
  * Класс для работы с правилами StreamingApi.
  * Подробнее на https://vk.com/dev/streaming_api_docs
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  * @see StreamingApi
  */

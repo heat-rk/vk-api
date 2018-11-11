@@ -9,7 +9,7 @@ import java.io.File;
 
 /**
  * Класс для загрузки основного фото.
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class MainPhoto extends UploadObject {

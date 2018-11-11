@@ -7,7 +7,7 @@ import ru.heat.vkapi.utils.Request;
 /**
  * Класс для работы с методами объекта Search.
  * Подробнее на https://vk.com/dev/search
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class Search {

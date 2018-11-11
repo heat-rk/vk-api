@@ -4,7 +4,7 @@ import ru.heat.vkapi.jsonHandler.JsonHandler;
 
 /**
  * Обработчик входящих сообщений StreamingApi
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  * @see StreamingApi
  */

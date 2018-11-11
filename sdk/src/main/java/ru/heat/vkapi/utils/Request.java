@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  * Класс для получение тела GET запроса.
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class Request {

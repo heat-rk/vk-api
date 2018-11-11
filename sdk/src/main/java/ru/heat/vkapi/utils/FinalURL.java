@@ -4,7 +4,7 @@ import ru.heat.vkapi.VkApi;
 
 /**
  * Класс для получения URL для дальнешей работы с ним.
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  */
 public class FinalURL {
 

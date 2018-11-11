@@ -7,7 +7,7 @@ import ru.heat.vkapi.utils.Request;
 /**
  * Класс для работы с методами объекта Status.
  * Подробнее на https://vk.com/dev/status
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class Status {

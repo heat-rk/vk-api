@@ -10,7 +10,7 @@ import java.net.URI;
 
 /**
  * Класс для работы с WebSocket-ми.
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  */
 public class WebSocket extends WebSocketClient {
     public WebSocket(URI serverUri, Draft protocolDraft) {

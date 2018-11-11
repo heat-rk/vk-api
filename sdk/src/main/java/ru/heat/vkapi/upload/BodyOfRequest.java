@@ -11,7 +11,7 @@ import java.io.*;
 
 /**
  * Класс для создания POST-запросов
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class BodyOfRequest {

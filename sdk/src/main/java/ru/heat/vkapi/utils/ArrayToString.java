@@ -1,8 +1,8 @@
 package ru.heat.vkapi.utils;
 
 /**
- * Класс для перевода массива объектов в строку: Array[]{"1","2"} => 1&2.
- * @author heat<kazyxanovr1@gmail.com>
+ * Класс для перевода массива объектов в строку.
+ * @author heat"kazyxanovr1@gmail.com"
  */
 public class ArrayToString {
     /**

@@ -7,7 +7,7 @@ import ru.heat.vkapi.VkApi;
  * Класс для работы с StreamingApi.
  * Работа со Streaming API выглядит так — Вы добавляете нужные Вам правила и затем получаете данные, которые подходят под эти правила, в едином потоке.
  * Подробнее на https://vk.com/dev/streaming_api_docs
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class StreamingApi {

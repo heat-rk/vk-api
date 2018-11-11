@@ -8,7 +8,7 @@ import ru.heat.vkapi.utils.Request;
  * Класс для работы с BotsLongPollApi.
  * Нужный вам метод для дальнейшей работы нужно переопределить!
  * Подробнее на https://vk.com/dev/bots_longpoll
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class BotsLongPollApi {

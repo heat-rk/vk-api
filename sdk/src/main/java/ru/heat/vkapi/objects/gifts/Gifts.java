@@ -7,7 +7,7 @@ import ru.heat.vkapi.utils.Request;
 /**
  * Класс для работы с методами объекта Gifts.
  * Подробнее на https://vk.com/dev/gifts
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class Gifts {

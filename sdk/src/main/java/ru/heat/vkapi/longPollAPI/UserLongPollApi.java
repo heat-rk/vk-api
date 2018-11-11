@@ -6,9 +6,9 @@ import ru.heat.vkapi.utils.Request;
 
 /**
  * Класс для работы с UserLongPollApi.
- * Метод <onResponse(JsonHandler response)> нужно переопределить для получения данных!
+ * Метод "onResponse(JsonHandler response)" нужно переопределить для получения данных!
  * Подробнее на https://vk.com/dev/using_longpoll
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class UserLongPollApi {

@@ -10,7 +10,7 @@ import java.io.File;
 
 /**
  * Класс для загрузки фото чата.
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class ChatPhoto extends UploadObject {

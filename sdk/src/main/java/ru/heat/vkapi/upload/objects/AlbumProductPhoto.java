@@ -10,7 +10,7 @@ import java.io.File;
 
 /**
  * Класс для загрузки фото альбома товаров.
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class AlbumProductPhoto extends UploadObject {

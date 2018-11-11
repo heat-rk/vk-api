@@ -6,7 +6,7 @@ import ru.heat.vkapi.upload.objects.*;
 /**
  * Класс для загрузки файлов.
  * Подробнее на https://vk.com/dev/upload_files
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class Upload {

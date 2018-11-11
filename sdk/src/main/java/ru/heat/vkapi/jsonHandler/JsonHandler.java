@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  * Класс для работы с JSON-данными
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class JsonHandler {
@@ -63,15 +63,14 @@ public class JsonHandler {
 
     /**
      * Получает объект класса JSONObject
-     * @link com.googlecode.json-simple#JSONObject
      * @return объект класса JSONObject
      */
     public JSONObject getJSONObject() {
         return (JSONObject) object;
     }
+
     /**
      * Получает объект класса JSONArray
-     * @link com.googlecode.json-simple#JSONArray
      * @return объект класса JSONArray
      */
     public JSONArray getJSONArray() {

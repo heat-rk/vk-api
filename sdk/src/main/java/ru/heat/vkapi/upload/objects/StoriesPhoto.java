@@ -9,7 +9,7 @@ import java.io.File;
 
 /**
  * Класс для загрузки фото в историю.
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class StoriesPhoto extends UploadObject {

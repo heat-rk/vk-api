@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * Класс авторизации для работы с VkApi.
  * Подробнее на https://vk.com/dev/access_token
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class VkAuth {
@@ -112,7 +112,7 @@ public class VkAuth {
     /**
      * Авторизация
      * @return объект класса VkAuth
-     * @throws IOException
+     * @throws IOException ошибка. Возможная причина: использованный код доступа(code)
      */
     public VkAuth authorize() throws IOException {
         if (authorizationType == 1) {

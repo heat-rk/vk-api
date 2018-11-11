@@ -10,7 +10,7 @@ import java.net.URISyntaxException;
 /**
  * Класс для работы с потоком StreamingApi.
  * Подробнее на https://vk.com/dev/streaming_api_docs
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  * @see StreamingApi
  */
@@ -52,7 +52,7 @@ public class Stream {
 
     /**
      * Функция, которая устанавливает обработчик входящих сообщений.
-     * В параметре следует переопределить метод <onMessage(JsonHandler message)>
+     * В параметре следует переопределить метод "onMessage(JsonHandler message)"
      * @param messageHandler объект класса BotsMessageHandler
      * @return объект класса Stream
      * @see MessageHandler

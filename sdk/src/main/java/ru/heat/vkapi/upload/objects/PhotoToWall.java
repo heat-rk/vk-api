@@ -10,7 +10,7 @@ import java.io.File;
 
 /**
  * Класс для загрузки фото на стену.
- * @author heat<kazyxanovr1@gmail.com>
+ * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class PhotoToWall extends UploadObject {
