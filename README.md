@@ -188,7 +188,7 @@
 ```java
 	vkApi.upload.productPhoto.upload(
                 GROUP_ID,
-                MAIN_PHOTO
+                MAIN_PHOTO,
                 FILE
         ).save().marketAdd(ARGS);
 ```
