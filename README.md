@@ -2,6 +2,10 @@
 
 Библиотека для работы с API Вконтакте. Все возможности API вы можете найти [здесь](https://vk.com/dev/manuals).
 
+# Документация
+
+https://heatalways.github.io/vkapi/
+
 # Зависимости, используемые в библиотеке
 
 * [JSON-SIMPLE](https://github.com/fangyidong/json-simple) версия 1.1.1.
@@ -10,6 +14,8 @@
 
 # Начало
 ## Авторизация
+https://heatalways.github.io/vkapi/ru/heat/vkapi/vkAuth/VkAuth.html
+
 Для начала вам нужно инициализировать объект класса VkAuth, используя нужный вам способ: 
 * [Authorization Code Flow для пользователя](https://vk.com/dev/authcode_flow_user)
 ```java
@@ -50,6 +56,8 @@
 Подробнее об авторизации вы можете узнать в [официальной документации](https://vk.com/dev/access_token).
 
 ## Создание объекта VkApi
+https://heatalways.github.io/vkapi/ru/heat/vkapi/VkApi.html
+
 ```java
 	VkApi vkApi = new VkApi(vkAuth);
 ```
@@ -75,6 +83,7 @@
 Полный список методов вы можете найти [здесь](https://vk.com/dev/methods).
 
 # Работа с объектом класса JsonHandler
+https://heatalways.github.io/vkapi/ru/heat/vkapi/jsonHandler/JsonHandler.html
 
 Пример 1
 ```java
@@ -91,6 +100,7 @@
 ```
 # Long Poll API
 ## Bots Long Poll API
+https://heatalways.github.io/vkapi/ru/heat/vkapi/longPollAPI/BotsLongPollApi.html
 
 Шаблон подключения Bots Long Poll API
 ```java
@@ -106,6 +116,7 @@
 Более подробную информацию можно найти [здесь](https://vk.com/dev/bots_longpoll).
 
 ## User Long Poll API
+https://heatalways.github.io/vkapi/ru/heat/vkapi/longPollAPI/UserLongPollApi.html
 
 Шаблон подключения Bots Long Poll API
 ```java
@@ -128,12 +139,15 @@
 Более подробную информацию можно найти [здесь](https://vk.com/dev/using_longpoll).
 
 # Streaming API
+https://heatalways.github.io/vkapi/ru/heat/vkapi/streamingAPI/StreamingApi.html
+
 ## Создание объекта
 ```java
 	StreamingApi streamingApi = new StreamingApi(VK_API);
 ```
 
 ## Правила
+https://heatalways.github.io/vkapi/ru/heat/vkapi/streamingAPI/Rules.html
 
 Добавление правила
 ```java
@@ -151,6 +165,7 @@
 ```
 
 ## Поток
+https://heatalways.github.io/vkapi/ru/heat/vkapi/streamingAPI/Stream.html
 
 Чтение потока
 ```java
@@ -166,6 +181,7 @@
 Более подробную информацию можно найти [здесь](https://vk.com/dev/streaming_api_docs).
 
 # Загрузка файлов
+https://heatalways.github.io/vkapi/ru/heat/vkapi/upload/Upload.html
 
 Шаблон загрузки файлов
 ```java
