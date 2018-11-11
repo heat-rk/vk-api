@@ -70,7 +70,7 @@
 ```
 Этот метод вернет объект класса JsonHandler
 ```json
-	[{"sex":2,"last_name":"Дуров","id":1,"first_name":"Павел"},{"sex":1,"last_name":"Владимирова","id":2,"first_name":"Александра"},{"sex":0,"last_name":"","id":3,"first_name":"DELETED","deactivated":"deleted"}]
+[{"sex":2,"last_name":"Дуров","id":1,"first_name":"Павел"},{"sex":1,"last_name":"Владимирова","id":2,"first_name":"Александра"},{"sex":0,"last_name":"","id":3,"first_name":"DELETED","deactivated":"deleted"}]
 ```
 
 # Работа с объектом класса JsonHandler
