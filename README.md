@@ -68,10 +68,12 @@
 ```java
 	vkApi.users.get("user_ids=1,2,3","fields=connection,sex");
 ```
-Этот метод вернет объект класса JsonHandler:
+Этот метод вернет объект класса JsonHandler
+```json
 	[{"sex":2,"last_name":"Дуров","id":1,"first_name":"Павел"},{"sex":1,"last_name":"Владимирова","id":2,"first_name":"Александра"},{"sex":0,"last_name":"","id":3,"first_name":"DELETED","deactivated":"deleted"}]
+```
 
-## Работа с объектом класса JsonHandler
+# Работа с объектом класса JsonHandler
 
 Пример 1
 ```java
