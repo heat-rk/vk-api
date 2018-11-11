@@ -66,18 +66,19 @@
 
 Пример
 ```java
-	vkApi.users.get("user_ids=1,2,3","fields=connection,sex");
+	vkApi.users.get("user_ids=1,2,3","fields=connections,sex");
 ```
 Этот метод вернет объект класса JsonHandler
 ```json
 [{"sex":2,"last_name":"Дуров","id":1,"first_name":"Павел"},{"sex":1,"last_name":"Владимирова","id":2,"first_name":"Александра"},{"sex":0,"last_name":"","id":3,"first_name":"DELETED","deactivated":"deleted"}]
 ```
+Полный список методов вы можете найти [здесь](https://vk.com/dev/methods).
 
 # Работа с объектом класса JsonHandler
 
 Пример 1
 ```java
-	JsonHandler users = vkApi.users.get("user_ids=1,2,3","fields=connection,sex");
+	JsonHandler users = vkApi.users.get("user_ids=1,2,3","fields=connections,sex");
 	JsonHandler first_user = users.get(0);
 	String name = first_user.get("first_name").toString();
 ```
