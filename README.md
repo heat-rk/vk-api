@@ -14,28 +14,28 @@
 * [Authorization Code Flow для пользователя](https://vk.com/dev/authcode_flow_user)
 ```java
 	VkAuth vkAuth = new VkAuth().userAuthorizationCodeFlow(
-            CLIENT_ID,
-            CLIENT_SECRET,
-            REDIRECT_URI,
-            CODE
-    );
+	            CLIENT_ID,
+	            CLIENT_SECRET,
+	            REDIRECT_URI,
+	            CODE
+	    );
 ```
 * [Authorization Code Flow для сообщества](https://vk.com/dev/authcode_flow_group)
 ```java
 	VkAuth vkAuth = new VkAuth().groupAuthorizationCodeFlow(
-            GROUP_ID,
-            CLIENT_ID,
-            CLIENT_SECRET,
-            REDIRECT_URI,
-            CODE
-    );
+	            GROUP_ID,
+	            CLIENT_ID,
+	            CLIENT_SECRET,
+	            REDIRECT_URI,
+	            CODE
+	    );
 ```
 * [Client Credentials Flow](https://vk.com/dev/client_cred_flow) 
 ```java
 	VkAuth vkAuth = new VkAuth().clientCredentialsFlow(
-            CLIENT_ID,
-            CLIENT_SECRET
-    );
+	            CLIENT_ID,
+	            CLIENT_SECRET
+	    );
 ```
 * Используя уже имеющийся ключ доступа(access token)
 ```java
@@ -44,7 +44,7 @@
 Также вы можете отдельно указать секретный ключ вашего приложения. Это нужно для того случая, если вы указали сервисный ключ доступа. В данном случае, если не указать секретный ключ, возможны ошибки.
 ```java
 	VkAuth vkAuth = new VkAuth().
-            setAccessToken(ACCESS_TOKEN).
-            setClientSecret(CLIENT_SECRET);
+	            setAccessToken(ACCESS_TOKEN).
+	            setClientSecret(CLIENT_SECRET);
 ```
 
