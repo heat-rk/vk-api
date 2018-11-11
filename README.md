@@ -165,3 +165,33 @@
 Вы переопределяете метод "onMessage", на который будут приходить сообщения в формате JSON.
 Более подробную информацию можно найти [здесь](https://vk.com/dev/streaming_api_docs).
 
+# Загрузка файлов
+
+Шаблон загрузки файлов
+```java
+	vkApi.upload.OBJECT.upload(PARAMS);
+```
+* OBJECT - объект загрузки (фото в сообщение{photoToMessage}, фото в альбом{photoToAlbum}...)
+* PARAMS - параметры (файл, группа...)
+
+Для некоторых видов загрузки необходимо вызвать метод "save" или даже "post/send";
+
+Пример 1
+```java
+	vkApi.upload.photoToAlbum.upload(
+                ALBUM_ID,
+                FILES
+        ).save();
+```
+
+Пример 2
+```java
+	vkApi.upload.productPhoto.upload(
+                GROUP_ID,
+                MAIN_PHOTO
+                FILE
+        ).save().marketAdd(ARGS);
+```
+
+Более подробную информацию можно найти [здесь](https://vk.com/dev/upload_files).
+
