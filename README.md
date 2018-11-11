@@ -89,4 +89,39 @@
 		System.out.println(user.get("first_name"));
 	}
 ```
+# Long Poll API
+## Bots Long Poll API
 
+Шаблон подключения Bots Long Poll API
+```java
+	BotsLongPollApi botsLongPollApi = new BotsLongPollApi(VK_API, GROUP_ID, WAIT);
+	        botsLongPollApi.setBotsMessageHandler(new BotsMessageHandler() {
+	            @Override
+	            public void METHOD(JsonHandler object) {
+	                //some code...
+	            }
+	        });
+```
+Вы переопределяете нужные вам методы, на которые будут приходить сообщения в формате JSON
+Более подробную информацию можно найти [здесь](https://vk.com/dev/bots_longpoll)
+
+## User Long Poll API
+
+Шаблон подключения Bots Long Poll API
+```java
+	UserLongPollApi userLongPollApi = new UserLongPollApi(
+	                VK_API,
+	                NEED_POINTS,
+	                GROUP_ID,
+	                WAIT,
+	                MODE,
+	                VERSION
+	        );
+	        userLongPollApi.setUserMessageHandler(new UserMessageHandler(){
+	            @Override
+	            public void onResponse(JsonHandler response) {
+	                //some code...
+	            }
+	        });
+```
+Вы переопределяете метод "onResponse", на который будут приходить сообщения в формате JSON
