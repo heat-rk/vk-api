@@ -169,7 +169,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/streamingAPI/Stream.html
 
 Чтение потока
 ```java
-	streamingApi.stream.setMessageHandler(new MessageHandler() {
+	streamingApi.stream.setStreamMessageHandler(new StreamMessageHandler() {
             @Override
             public void onMessage(JsonHandler message) {
                 //some code...
