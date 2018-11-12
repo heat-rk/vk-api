@@ -108,16 +108,6 @@ public class VkApi {
     }
 
     /**
-     * Устанавливает версию API
-     * @param v версия
-     * @return объект класса VkApi
-     */
-    public VkApi setVersion(String v) {
-        this.v = v;
-        return this;
-    }
-
-    /**
      * Устанавливает язык, на котором будут возвращаться различные данные
      * @param lang язык(ru,en)
      * @return объект класса VkApi
