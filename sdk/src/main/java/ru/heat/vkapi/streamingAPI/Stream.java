@@ -18,7 +18,7 @@ public class Stream {
     private StreamingApi streamingApi;
     private WebSocket webSocket;
     private String url;
-    private MessageHandler messageHandler;
+    private StreamMessageHandler streamMessageHandler;
 
     /**
      * Создает объект класса Stream
@@ -33,7 +33,7 @@ public class Stream {
                 @Override
                 public void onMessage(String s) {
                     JsonHandler message = new JsonHandler(s);
-                    messageHandler.onMessage(message);
+                    streamMessageHandler.onMessage(message);
                 }
             };
         } catch (URISyntaxException e) {
@@ -53,12 +53,12 @@ public class Stream {
     /**
      * Функция, которая устанавливает обработчик входящих сообщений.
      * В параметре следует переопределить метод "onMessage(JsonHandler message)"
-     * @param messageHandler объект класса BotsMessageHandler
+     * @param streamMessageHandler объект класса StreamMessageHandler
      * @return объект класса Stream
-     * @see MessageHandler
+     * @see StreamMessageHandler
      */
-    public Stream setMessageHandler(MessageHandler messageHandler) {
-        this.messageHandler = messageHandler;
+    public Stream setStreamMessageHandler(StreamMessageHandler streamMessageHandler) {
+        this.streamMessageHandler = streamMessageHandler;
         connect();
         return this;
     }

@@ -107,16 +107,6 @@ public class VkApi {
         }
     }
 
-    /**
-     * Устанавливает язык, на котором будут возвращаться различные данные
-     * @param lang язык(ru,en)
-     * @return объект класса VkApi
-     */
-    public VkApi setLanguage(String lang) {
-        this.lang = lang;
-        return this;
-    }
-
     public String getBaseUrl() {
         String url = "https://api.vk.com/method/!METHOD_NAME?!PARAMETERS&access_token=" + access_token +
                 "&client_secret=!SECRET&v=" + v +

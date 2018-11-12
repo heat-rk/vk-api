@@ -118,7 +118,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/longPollAPI/BotsLongPollApi.htm
 ## User Long Poll API
 https://heatalways.github.io/vkapi/ru/heat/vkapi/longPollAPI/UserLongPollApi.html
 
-Шаблон подключения Bots Long Poll API
+Шаблон подключения User Long Poll API
 ```java
 	UserLongPollApi userLongPollApi = new UserLongPollApi(
 	                VK_API,
