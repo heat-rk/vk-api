@@ -57,14 +57,14 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/vkAuth/VkAuth.html
 https://heatalways.github.io/vkapi/ru/heat/vkapi/VkApi.html
 
 ```
-	    VkApi vkApi = new VkApi(vkAuth);
+        VkApi vkApi = new VkApi(vkAuth);
 ```
 
 # Методы
 
 Для того, чтобы вызвать метод, вам нужно обратиться к нему
 ```
-	    vkApi.PREFIX.METHOD(PARAMS);
+        vkApi.PREFIX.METHOD(PARAMS);
 ```
 * OBJECT - префикс метода (account, users, friends...)
 * METHOD - метод
@@ -72,7 +72,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/VkApi.html
 
 Пример
 ```
-	    vkApi.users.get("user_ids=1,2,3","fields=connections,sex");
+        vkApi.users.get("user_ids=1,2,3","fields=connections,sex");
 ```
 Этот метод вернет объект класса JsonHandler
 ```
@@ -141,7 +141,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/streamingAPI/StreamingApi.html
 
 ## Создание объекта
 ```
-	    StreamingApi streamingApi = new StreamingApi(VK_API);
+        StreamingApi streamingApi = new StreamingApi(VK_API);
 ```
 
 ## Правила
@@ -149,17 +149,17 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/streamingAPI/Rules.html
 
 Добавление правила
 ```
-	    streamingApi.rules.add(VALUE, TAG);
+        streamingApi.rules.add(VALUE, TAG);
 ```
 
 Удаление правила
 ```
-	    streamingApi.rules.delete(TAG);
+        streamingApi.rules.delete(TAG);
 ```
 
 Получение правил
 ```
-	    streamingApi.rules.get();
+        streamingApi.rules.get();
 ```
 
 ## Поток
@@ -183,7 +183,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/upload/Upload.html
 
 Шаблон загрузки файлов
 ```
-	    vkApi.upload.OBJECT.upload(PARAMS);
+        vkApi.upload.OBJECT.upload(PARAMS);
 ```
 * OBJECT - объект загрузки (фото в сообщение{photoToMessage}, фото в альбом{photoToAlbum}...)
 * PARAMS - параметры (файл, группа...)
