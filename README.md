@@ -19,12 +19,12 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/vkAuth/VkAuth.html
 Для начала вам нужно инициализировать объект класса VkAuth, используя нужный вам способ: 
 * [Authorization Code Flow для пользователя](https://vk.com/dev/authcode_flow_user)
 ```java
-    VkAuth vkAuth = new VkAuth().userAuthorizationCodeFlow(
-        CLIENT_ID,
-        CLIENT_SECRET,
-        REDIRECT_URI,
-        CODE
-    );
+        VkAuth vkAuth = new VkAuth().userAuthorizationCodeFlow(
+            CLIENT_ID,
+            CLIENT_SECRET,
+            REDIRECT_URI,
+            CODE
+        );
 ```
 * [Authorization Code Flow для сообщества](https://vk.com/dev/authcode_flow_group)
 ```java
