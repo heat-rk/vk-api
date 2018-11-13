@@ -2,4 +2,4 @@ idea/
 .idea/
 .idea
 *.iml
-Main.java
+sdk/**/Main.java
