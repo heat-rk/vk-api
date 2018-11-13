@@ -11,8 +11,7 @@ import ru.heat.vkapi.utils.Request;
  * @see StreamingApi
  */
 public class Rules {
-    private StreamingApi streamingApi;
-    private String url;
+    private final String url;
 
     /**
      * Создает объект класса Rules
@@ -20,7 +19,6 @@ public class Rules {
      * @see StreamingApi
      */
     public Rules(StreamingApi streamingApi) {
-        this.streamingApi = streamingApi;
         url = "https://" + streamingApi.getEndpoint() + "/rules?key=" + streamingApi.getKey();
     }
 
@@ -40,8 +38,7 @@ public class Rules {
      */
     public JsonHandler add(String value, String tag) {
         String json = "{\"rule\":{\"value\":\"" + value + "\",\"tag\":\"" + tag + "\"}}";
-        JsonHandler response = new JsonHandler(BodyOfRequest.addRule(url, json));
-        return response;
+        return new JsonHandler(BodyOfRequest.addRule(url, json));
     }
 
     /**
@@ -51,7 +48,6 @@ public class Rules {
      */
     public JsonHandler delete(String tag) {
         String json = "{\"tag\":\"" + tag + "\"}";
-        JsonHandler response = new JsonHandler(BodyOfRequest.deleteRule(url, json));
-        return response;
+        return new JsonHandler(BodyOfRequest.deleteRule(url, json));
     }
 }

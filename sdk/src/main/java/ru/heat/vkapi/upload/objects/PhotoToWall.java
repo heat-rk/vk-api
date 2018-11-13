@@ -65,11 +65,10 @@ public class PhotoToWall extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler post(String... args) {
-        JsonHandler post = vkApi.wall.post(
+        return vkApi.wall.post(
             "attachments=photo" + response.get("owner_id") + "_" + response.get("id"),
                 "owner_id=-" + group_id,
                 ArrayToString.toStr(args)
         );
-        return post;
     }
 }

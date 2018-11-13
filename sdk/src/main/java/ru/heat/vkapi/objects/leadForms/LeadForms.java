@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class LeadForms {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public LeadForms(VkApi vkApi) {
         this.vkApi = vkApi;
     }

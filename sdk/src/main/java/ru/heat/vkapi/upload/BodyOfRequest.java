@@ -27,13 +27,12 @@ public class BodyOfRequest {
 
     //upload
     public static String photoToAlbum(String url, File[] files) {
-        HttpEntity reqEntity = null;
         MultipartEntityBuilder multipartEntityBuilder = MultipartEntityBuilder.create();
         for (int i = 0; i < files.length; i++) {
             FileBody bin = new FileBody(files[i]);
             multipartEntityBuilder.addPart("file" + (i + 1), bin);
         }
-        reqEntity = multipartEntityBuilder.build();
+        HttpEntity reqEntity = multipartEntityBuilder.build();
         return HttpPost.getResult(url, reqEntity);
     }
 

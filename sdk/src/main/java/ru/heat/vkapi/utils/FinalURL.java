@@ -7,10 +7,11 @@ import ru.heat.vkapi.VkApi;
  * @author heat"kazyxanovr1@gmail.com"
  */
 public class FinalURL {
-
-    private static VkApi vkApi;
+    private VkApi vkApi;
     public FinalURL(VkApi vkApi) {
         this.vkApi = vkApi;
+    }
+    public FinalURL() {
     }
     public String get(String method, String... parameters) {
         String url = vkApi.getBaseUrl();
@@ -19,14 +20,14 @@ public class FinalURL {
         url = url.replace(" ", "%20");
         return url;
     }
-    public static String getTokenUrl(String client_id, String client_secret) {
+    public String getTokenUrl(String client_id, String client_secret) {
         String url = "https://oauth.vk.com/access_token?client_id=!ID&client_secret=!SECRET&v=!V&grant_type=client_credentials";
         url = url.replace("!ID", client_id);
         url = url.replace("!SECRET", client_secret);
         url = url.replace("!V", vkApi.getVersion());
         return url;
     }
-    public static String getTokenUrl(String client_id, String client_secret, String redirect_uri, String code) {
+    public String getTokenUrl(String client_id, String client_secret, String redirect_uri, String code) {
         String url = "https://oauth.vk.com/access_token?client_id=!ID&client_secret=!SECRET&redirect_uri=!REDIRECT&code=!CODE";
         url = url.replace("!ID", client_id);
         url = url.replace("!SECRET", client_secret);

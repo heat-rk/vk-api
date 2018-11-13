@@ -12,13 +12,11 @@ import ru.heat.vkapi.utils.Request;
  *
  */
 public class BotsLongPollApi {
-    private VkApi vkApi;
-    private Thread thread;
-    private String key;
-    private String server;
+    private final String key;
+    private final String server;
     private String ts;
     private BotsMessageHandler botsMessageHandler;
-    private int wait;
+    private final int wait;
 
     /**
      * Создает объект класса BotsLongPollApi
@@ -27,7 +25,6 @@ public class BotsLongPollApi {
      * @param wait время ожидания ответа
      */
     public BotsLongPollApi(VkApi vkApi, String group_id, int wait) {
-        this.vkApi = vkApi;
         this.wait = wait;
         JsonHandler response = vkApi.groups.getLongPollServer("group_id=" + group_id);
         server = response.get("server").toString();
@@ -127,7 +124,7 @@ public class BotsLongPollApi {
         return this;
     }
     private void start() {
-        thread = new Thread(new Runnable() {
+        new Thread(new Runnable() {
             public void run() {
                 while (true) {
                     String url = server +
@@ -139,7 +136,6 @@ public class BotsLongPollApi {
                     check(response.get("updates"));
                 }
             }
-        });
-        thread.start();
+        }).start();
     }
 }

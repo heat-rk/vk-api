@@ -53,11 +53,10 @@ public class DocumentToMessage extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler send(String... args) {
-        JsonHandler result = vkApi.messages.send(
+        return vkApi.messages.send(
             "peer_id=" + peer_id,
                 "attachment=doc" + response.get("owner_id") + "_" + response.get("id"),
                 ArrayToString.toStr(args)
         );
-        return result;
     }
 }

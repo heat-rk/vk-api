@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class AppWidgets {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public AppWidgets(VkApi vkApi) {
         this.vkApi = vkApi;
     }

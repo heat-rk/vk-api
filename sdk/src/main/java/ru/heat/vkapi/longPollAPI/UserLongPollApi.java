@@ -12,15 +12,13 @@ import ru.heat.vkapi.utils.Request;
  *
  */
 public class UserLongPollApi {
-    private VkApi vkApi;
-    private Thread thread;
-    private String key;
-    private String server;
+    private final String key;
+    private final String server;
     private String ts;
     private UserMessageHandler userMessageHandler;
-    private int mode;
-    private int wait;
-    private int version;
+    private final int mode;
+    private final int wait;
+    private final int version;
 
     /**
      * Создает объект класса UserLongPollApi
@@ -32,8 +30,7 @@ public class UserLongPollApi {
      * @param version версия
      */
     public UserLongPollApi(VkApi vkApi, int need_pts, String group_id, int wait, int mode, int version) {
-        this.vkApi = vkApi;
-        JsonHandler response = this.vkApi.messages.getLongPollServer(
+        JsonHandler response = vkApi.messages.getLongPollServer(
                 "need_pts" + need_pts,
                 "group_id=" + group_id,
                 "lp_version=" + version);
@@ -50,7 +47,7 @@ public class UserLongPollApi {
         return this;
     }
     private void start() {
-        thread = new Thread(new Runnable() {
+        new Thread(new Runnable() {
             @Override
             public void run() {
                 while (true) {
@@ -65,7 +62,6 @@ public class UserLongPollApi {
                     userMessageHandler.onResponse(response.get("updates"));
                 }
             }
-        });
-        thread.start();
+        }).start();
     }
 }

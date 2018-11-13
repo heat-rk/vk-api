@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Market {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Market(VkApi vkApi) {
         this.vkApi = vkApi;
     }

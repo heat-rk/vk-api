@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Storage {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Storage(VkApi vkApi) {
         this.vkApi = vkApi;
     }

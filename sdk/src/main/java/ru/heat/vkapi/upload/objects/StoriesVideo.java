@@ -25,7 +25,6 @@ public class StoriesVideo extends UploadObject {
     public JsonHandler upload(File video_file, String... args) {
         String upload_url = vkApi.stories.getVideoUploadServer(
                 args).get("upload_url").toString();
-        JsonHandler response = new JsonHandler(BodyOfRequest.storiesVideo(upload_url, video_file));
-        return response;
+        return new JsonHandler(BodyOfRequest.storiesVideo(upload_url, video_file));
     }
 }

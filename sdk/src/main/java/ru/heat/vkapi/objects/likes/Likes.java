@@ -13,7 +13,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Likes {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Likes(VkApi vkApi) {
         this.vkApi = vkApi;
     }

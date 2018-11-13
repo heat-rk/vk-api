@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Fave {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Fave(VkApi vkApi) {
         this.vkApi = vkApi;
     }

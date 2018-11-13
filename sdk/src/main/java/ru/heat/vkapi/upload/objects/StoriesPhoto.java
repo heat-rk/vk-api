@@ -24,7 +24,6 @@ public class StoriesPhoto extends UploadObject {
      */
     public JsonHandler upload(File file, String... args) {
         String upload_url = vkApi.stories.getPhotoUploadServer(args).get("upload_url").toString();
-        JsonHandler response = new JsonHandler(BodyOfRequest.storiesPhoto(upload_url, file));
-        return response;
+        return new JsonHandler(BodyOfRequest.storiesPhoto(upload_url, file));
     }
 }

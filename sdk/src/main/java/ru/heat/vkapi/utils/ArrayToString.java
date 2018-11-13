@@ -12,12 +12,12 @@ public class ArrayToString {
      */
     public static String toStr(Object[] values) {
         try {
-            String result = "";
-            result += values[0];
+            StringBuilder str = new StringBuilder();
+            str.append(values[0]);
             for (int i = 1; i < values.length; i++) {
-                result += "&" + values[i];
+                str.append("&" + values[i]);
             }
-            return result;
+            return str.toString();
         } catch (ArrayIndexOutOfBoundsException e) {
             return "";
         }

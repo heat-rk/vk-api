@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Status {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Status(VkApi vkApi) {
         this.vkApi = vkApi;
     }

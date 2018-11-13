@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Newsfeed {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Newsfeed(VkApi vkApi) {
         this.vkApi = vkApi;
     }

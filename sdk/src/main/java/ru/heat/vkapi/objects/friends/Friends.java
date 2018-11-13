@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Friends {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Friends(VkApi vkApi) {
         this.vkApi = vkApi;
     }

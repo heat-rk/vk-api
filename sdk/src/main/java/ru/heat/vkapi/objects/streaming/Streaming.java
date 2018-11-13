@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Streaming {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Streaming(VkApi vkApi) {
         this.vkApi = vkApi;
     }

@@ -45,11 +45,10 @@ public class PhotoToMessage extends UploadObject {
         return this;
     }
     public JsonHandler post(String... args) {
-        JsonHandler post = vkApi.messages.send(
+        return vkApi.messages.send(
             "attachment=photo" + response.get("owner_id") + "_" + response.get("id"),
                 "peer_id=" + peer_id,
                 ArrayToString.toStr(args)
         );
-        return post;
     }
 }

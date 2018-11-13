@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Secure {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Secure(VkApi vkApi) {
         this.vkApi = vkApi;
     }

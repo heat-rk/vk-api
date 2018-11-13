@@ -11,7 +11,7 @@ import ru.heat.vkapi.utils.Request;
  *
  */
 public class Ads {
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Ads(VkApi vkApi) {
         this.vkApi = vkApi;
     }

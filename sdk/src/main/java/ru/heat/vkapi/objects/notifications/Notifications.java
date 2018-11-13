@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Notifications {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Notifications(VkApi vkApi) {
         this.vkApi = vkApi;
     }

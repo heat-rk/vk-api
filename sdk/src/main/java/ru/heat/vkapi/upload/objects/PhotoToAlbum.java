@@ -58,7 +58,7 @@ public class PhotoToAlbum extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler save(String... args) {
-        JsonHandler save = vkApi.photos.save(
+        return vkApi.photos.save(
                 "server=" + response.get("server"),
                 "photos_list=" + response.get("photos_list"),
                 "aid=" + response.get("aid"),
@@ -67,6 +67,5 @@ public class PhotoToAlbum extends UploadObject {
                 "album_id=" + album_id,
                 ArrayToString.toStr(args)
         );
-        return save;
     }
 }

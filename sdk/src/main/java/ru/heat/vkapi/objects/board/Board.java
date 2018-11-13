@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Board {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Board(VkApi vkApi) {
         this.vkApi = vkApi;
     }

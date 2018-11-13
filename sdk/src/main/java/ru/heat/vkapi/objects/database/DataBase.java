@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class DataBase {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public DataBase(VkApi vkApi) {
         this.vkApi = vkApi;
     }

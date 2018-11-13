@@ -10,8 +10,6 @@ import ru.heat.vkapi.upload.objects.*;
  *
  */
 public class Upload {
-    private VkApi vkApi;
-
     public final PhotoToAlbum photoToAlbum;
     public final PhotoToWall photoToWall;
     public final MainPhoto mainPhoto;
@@ -29,7 +27,6 @@ public class Upload {
     public final StoriesVideo storiesVideo;
 
     public Upload(VkApi vkApi) {
-        this.vkApi = vkApi;
         photoToAlbum = new PhotoToAlbum(vkApi);
         photoToWall = new PhotoToWall(vkApi);
         mainPhoto = new MainPhoto(vkApi);

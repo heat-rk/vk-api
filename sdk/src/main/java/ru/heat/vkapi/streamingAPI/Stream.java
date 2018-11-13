@@ -15,9 +15,7 @@ import java.net.URISyntaxException;
  * @see StreamingApi
  */
 public class Stream {
-    private StreamingApi streamingApi;
     private WebSocket webSocket;
-    private String url;
     private StreamMessageHandler streamMessageHandler;
 
     /**
@@ -26,8 +24,7 @@ public class Stream {
      * @see StreamingApi
      */
     public Stream(StreamingApi streamingApi) {
-        this.streamingApi = streamingApi;
-        url = "wss://" + this.streamingApi.getEndpoint() + "/stream?key=" + this.streamingApi.getKey();
+        String url = "wss://" + streamingApi.getEndpoint() + "/stream?key=" + streamingApi.getKey();
         try {
             webSocket = new WebSocket(new URI(url), new Draft_6455()) {
                 @Override
@@ -43,11 +40,9 @@ public class Stream {
 
     /**
      * Запуск потока для чтения данных
-     * @return объект класса Stream
      */
-    private Stream connect() {
+    private void connect() {
         webSocket.connect();
-        return this;
     }
 
     /**

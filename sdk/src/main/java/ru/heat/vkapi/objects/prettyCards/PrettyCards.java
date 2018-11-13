@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class PrettyCards {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public PrettyCards(VkApi vkApi) {
         this.vkApi = vkApi;
     }

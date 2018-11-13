@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Leads {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Leads(VkApi vkApi) {
         this.vkApi = vkApi;
     }

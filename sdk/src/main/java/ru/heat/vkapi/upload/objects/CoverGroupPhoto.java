@@ -37,10 +37,9 @@ public class CoverGroupPhoto extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler save() {
-        JsonHandler save = vkApi.photos.saveOwnerCoverPhoto(
+        return vkApi.photos.saveOwnerCoverPhoto(
                 "hash=" + response.get("hash"),
                 "photo=" + response.get("photo")
         );
-        return save;
     }
 }

@@ -70,21 +70,19 @@ public class ProductPhoto extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler marketAdd(String... args) {
-        JsonHandler result = null;
         if (main_photo == 1) {
-            result = vkApi.market.add(
+            return vkApi.market.add(
                     "main_photo_id=" + response.get("id"),
                     "owner_id=-" + group_id,
                     ArrayToString.toStr(args)
             );
         } else {
-            result = vkApi.market.add(
+            return vkApi.market.add(
                     "photo_ids=" + response.get("id"),
                     "owner_id=-" + group_id,
                     ArrayToString.toStr(args)
             );
         }
-        return result;
     }
 
     /**
@@ -93,20 +91,18 @@ public class ProductPhoto extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler marketEdit(String... args) {
-        JsonHandler result = null;
         if (main_photo == 1) {
-            result = vkApi.market.edit(
+            return vkApi.market.edit(
                     "main_photo_id=" + response.get("id"),
                     "owner_id=-" + group_id,
                     ArrayToString.toStr(args)
             );
         } else {
-            result = vkApi.market.edit(
+            return vkApi.market.edit(
                     "photo_ids=" + response.get("id"),
                     "owner_id=-" + group_id,
                     ArrayToString.toStr(args)
             );
         }
-        return result;
     }
 }

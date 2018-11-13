@@ -7,13 +7,13 @@ import ru.heat.vkapi.upload.UploadObject;
 import ru.heat.vkapi.utils.ArrayToString;
 import ru.heat.vkapi.utils.Request;
 
+import java.io.File;
+
 /**
  * Класс для загрузки видео.
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-import java.io.File;
-
 public class Video extends UploadObject {
     public Video(VkApi vkApi) {
         super(vkApi);
@@ -30,8 +30,7 @@ public class Video extends UploadObject {
         String upload_url = vkApi.video.save(
                 "link=" + link,
                 ArrayToString.toStr(args)).get("upload_url").toString();
-        JsonHandler result = new JsonHandler(Request.get(upload_url));
-        return result;
+        return new JsonHandler(Request.get(upload_url));
     }
 
     /**
@@ -47,8 +46,7 @@ public class Video extends UploadObject {
                 "link=" + link,
                 "group_id=" + group_id,
                 ArrayToString.toStr(args)).get("upload_url").toString();
-        JsonHandler result = new JsonHandler(Request.get(upload_url));
-        return result;
+        return new JsonHandler(Request.get(upload_url));
     }
 
     /**
@@ -60,8 +58,7 @@ public class Video extends UploadObject {
      */
     public JsonHandler upload(File file, String... args) {
         String upload_url = vkApi.video.save(args).get("upload_url").toString();
-        JsonHandler response = new JsonHandler(BodyOfRequest.video(upload_url, file));
-        return response;
+        return new JsonHandler(BodyOfRequest.video(upload_url, file));
     }
 
     /**
@@ -76,7 +73,6 @@ public class Video extends UploadObject {
         String upload_url = vkApi.video.save(
                 "group_id=" + group_id,
                 ArrayToString.toStr(args)).get("upload_url").toString();
-        JsonHandler response = new JsonHandler(BodyOfRequest.video(upload_url, file));
-        return response;
+        return new JsonHandler(BodyOfRequest.video(upload_url, file));
     }
 }

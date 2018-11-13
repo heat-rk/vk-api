@@ -111,16 +111,14 @@ public class VkAuth {
 
     /**
      * Авторизация
-     * @return объект класса VkAuth
      * @throws IOException ошибка. Возможная причина: использованный код доступа(code)
      */
-    public VkAuth authorize() throws IOException {
+    public void authorize() throws IOException {
         if (authorizationType == 1) {
-            access_token = Request.getServiceKey(client_id, client_secret);
+            access_token = new Request().getServiceKey(client_id, client_secret);
         } else if (authorizationType == 2) {
-            access_token = Request.getServiceKey(client_id, client_secret, redirect_uri, code, group_id);
+            access_token = new Request().getServiceKey(client_id, client_secret, redirect_uri, code, group_id);
         }
-        return this;
     }
 
     public String getGroupId() {

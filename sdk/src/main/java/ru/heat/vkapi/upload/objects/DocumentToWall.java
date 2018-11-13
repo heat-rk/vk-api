@@ -61,11 +61,10 @@ public class DocumentToWall extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler post(String... args) {
-        JsonHandler result = vkApi.wall.post(
+        return vkApi.wall.post(
                 "owner_id=" + response.get("owner_id"),
                 "attachments=doc" + response.get("owner_id") + "_" + response.get("id"),
                 ArrayToString.toStr(args)
         );
-        return result;
     }
 }

@@ -47,10 +47,9 @@ public class Document extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler save(String... args) {
-        JsonHandler save = vkApi.docs.save(
+        return vkApi.docs.save(
             "file=" + response.get("file"),
                 ArrayToString.toStr(args)
         );
-        return save;
     }
 }

@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Docs {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Docs(VkApi vkApi) {
         this.vkApi = vkApi;
     }

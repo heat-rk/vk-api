@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Stats {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Stats(VkApi vkApi) {
         this.vkApi = vkApi;
     }

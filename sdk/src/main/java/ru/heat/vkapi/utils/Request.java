@@ -13,19 +13,19 @@ import java.util.Scanner;
  *
  */
 public class Request {
+    private final FinalURL finalURL = new FinalURL();
     private static String getJsonString(String url) throws IOException {
         URLConnection urlConnection = new URL(url).openConnection();
         Scanner scanner = new Scanner(urlConnection.getInputStream());
-        String jsonString = scanner.nextLine();
-        return jsonString;
+        return scanner.nextLine();
     }
-    public static String getServiceKey(String id, String sec) throws IOException {
-        String url = FinalURL.getTokenUrl(id, sec);
+    public String getServiceKey(String id, String sec) throws IOException {
+        String url = finalURL.getTokenUrl(id, sec);
         JsonHandler r = new JsonHandler(getJsonString(url));
         return r.get("access_token").toString();
     }
-    public static String getServiceKey(String id, String sec, String redirect_uri, String code, String group_id) throws IOException {
-        String url = FinalURL.getTokenUrl(id, sec, redirect_uri, code);
+    public String getServiceKey(String id, String sec, String redirect_uri, String code, String group_id) throws IOException {
+        String url = finalURL.getTokenUrl(id, sec, redirect_uri, code);
         JsonHandler r = new JsonHandler(getJsonString(url));
         if (group_id == null) {
             return r.get("access_token").toString();
@@ -49,8 +49,7 @@ public class Request {
     }
     public static JsonHandler getCallBackResponse(String url) {
         try {
-            JsonHandler r = new JsonHandler(getJsonString(url));
-            return r;
+            return new JsonHandler(getJsonString(url));
         } catch (IOException e) {
             e.printStackTrace();
             return null;

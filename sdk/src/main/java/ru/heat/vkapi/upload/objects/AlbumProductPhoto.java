@@ -53,12 +53,11 @@ public class AlbumProductPhoto extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler addAlbum(String... args) {
-        JsonHandler result = vkApi.market.addAlbum(
+        return vkApi.market.addAlbum(
             "owner_id=-" + group_id,
                 "photo_id=" + response.get("id"),
                 ArrayToString.toStr(args)
         );
-        return result;
     }
 
     /**
@@ -67,11 +66,10 @@ public class AlbumProductPhoto extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler editAlbum(String... args) {
-        JsonHandler result = vkApi.market.editAlbum(
+        return vkApi.market.editAlbum(
                 "owner_id=-" + group_id,
                 "photo_id=" + response.get("id"),
                 ArrayToString.toStr(args)
         );
-        return result;
     }
 }

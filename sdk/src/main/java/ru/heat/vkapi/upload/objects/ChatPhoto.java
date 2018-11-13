@@ -38,9 +38,8 @@ public class ChatPhoto extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler save() {
-        JsonHandler save = vkApi.messages.setChatPhoto(
+        return vkApi.messages.setChatPhoto(
             "file=" + response.get("response")
         );
-        return save;
     }
 }

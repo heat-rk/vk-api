@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Search {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Search(VkApi vkApi) {
         this.vkApi = vkApi;
     }

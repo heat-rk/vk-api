@@ -11,9 +11,8 @@ import ru.heat.vkapi.VkApi;
  *
  */
 public class StreamingApi {
-    private VkApi vkApi;
-    private String endpoint;
-    private String key;
+    private final String endpoint;
+    private final String key;
 
     public final Rules rules;
     public final Stream stream;
@@ -23,7 +22,6 @@ public class StreamingApi {
      * @param vkApi объект основного класса VkApi
      */
     public StreamingApi(VkApi vkApi) {
-        this.vkApi = vkApi;
         JsonHandler response = vkApi.streaming.getServerUrl();
         endpoint = response.get("endpoint").toString();
         key = response.get("key").toString();

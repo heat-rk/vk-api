@@ -76,11 +76,10 @@ public class MainPhoto extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler save() {
-        JsonHandler save = vkApi.photos.saveOwnerPhoto(
+        return vkApi.photos.saveOwnerPhoto(
                 "server=" + response.get("server"),
                 "hash=" + response.get("hash"),
                 "photo=" + response.get("photo")
         );
-        return save;
     }
 }

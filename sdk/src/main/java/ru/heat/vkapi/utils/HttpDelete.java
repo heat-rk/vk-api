@@ -28,10 +28,8 @@ public class HttpDelete {
             HttpEntity resEntity = response.getEntity();
             if (resEntity != null) {
                 Scanner scanner = new Scanner(resEntity.getContent());
-                String result = scanner.nextLine();
-                return result;
+                return scanner.nextLine();
             }
-            EntityUtils.consume(resEntity);
         } catch (ClientProtocolException e) {
             e.printStackTrace();
         } catch (IOException e) {

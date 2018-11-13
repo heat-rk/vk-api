@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Groups {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Groups(VkApi vkApi) {
         this.vkApi = vkApi;
     }

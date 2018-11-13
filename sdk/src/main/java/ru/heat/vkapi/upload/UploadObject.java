@@ -4,7 +4,7 @@ import ru.heat.vkapi.VkApi;
 import ru.heat.vkapi.jsonHandler.JsonHandler;
 
 public class UploadObject {
-    public VkApi vkApi;
+    public final VkApi vkApi;
     public JsonHandler response;
 
     public UploadObject(VkApi vkApi) {

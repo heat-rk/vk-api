@@ -12,7 +12,7 @@ import ru.heat.vkapi.utils.Request;
  */
 public class Photos {
 
-    private VkApi vkApi;
+    private final VkApi vkApi;
     public Photos(VkApi vkApi) {
         this.vkApi = vkApi;
     }

@@ -49,8 +49,8 @@ import java.io.IOException;
 public class VkApi {
     private String secret;
     private String access_token;
-    private String v = "5.87";
-    private String lang = "ru";
+    private final String v = "5.87";
+    private final String lang = "ru";
 
     private final FinalURL finalURL = new FinalURL(this);
 
@@ -121,7 +121,6 @@ public class VkApi {
     public FinalURL getFinalURL() {
         return finalURL;
     }
-
     public String getVersion() {
         return v;
     }
