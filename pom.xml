@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.heat.vkApi</groupId>
+    <groupId>com.github.heatalways</groupId>
     <artifactId>api</artifactId>
     <version>1.6.2-SNAPSHOT</version>
 
@@ -35,7 +35,7 @@
         <developer>
             <name>Ramil Kazykhanov</name>
             <email>kazyxanovr1@gmail.com</email>
-            <organization>ru.heat.vkApi</organization>
+            <organization>com.github.heatalways</organization>
             <organizationUrl>https://github.com/HeatAlways</organizationUrl>
         </developer>
     </developers>
