@@ -4,6 +4,7 @@ import ru.heat.vkapi.VkApi;
 import ru.heat.vkapi.jsonHandler.JsonHandler;
 import ru.heat.vkapi.upload.BodyOfRequest;
 import ru.heat.vkapi.upload.UploadObject;
+import ru.heat.vkapi.utils.ArrayToString;
 
 import java.io.File;
 
@@ -46,7 +47,8 @@ public class PhotoToMessage extends UploadObject {
     public JsonHandler post(String... args) {
         JsonHandler post = vkApi.messages.send(
             "attachment=photo" + response.get("owner_id") + "_" + response.get("id"),
-                "peer_id=" + peer_id
+                "peer_id=" + peer_id,
+                ArrayToString.toStr(args)
         );
         return post;
     }
