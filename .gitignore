@@ -1,5 +1,6 @@
 idea/
 .idea/
+target/
 .idea
 *.iml
 sdk/**/Main.java
