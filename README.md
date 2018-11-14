@@ -18,7 +18,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/vkAuth/VkAuth.html
 
 Для начала вам нужно инициализировать объект класса VkAuth, используя нужный вам способ: 
 * [Authorization Code Flow для пользователя](https://vk.com/dev/authcode_flow_user)
-```
+```java
         VkAuth vkAuth = new VkAuth().userAuthorizationCodeFlow(
             CLIENT_ID,
             CLIENT_SECRET,
@@ -27,7 +27,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/vkAuth/VkAuth.html
         );
 ```
 * [Authorization Code Flow для сообщества](https://vk.com/dev/authcode_flow_group)
-```
+```java
         VkAuth vkAuth = new VkAuth().groupAuthorizationCodeFlow(
             GROUP_ID,
             CLIENT_ID,
@@ -37,18 +37,18 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/vkAuth/VkAuth.html
         );
 ```
 * [Client Credentials Flow](https://vk.com/dev/client_cred_flow) 
-```
+```java
         VkAuth vkAuth = new VkAuth().clientCredentialsFlow(
             CLIENT_ID,
             CLIENT_SECRET
         );
 ```
 * Используя уже имеющийся ключ доступа(access token)
-```
+```java
         VkAuth vkAuth = new VkAuth().setAccessToken(ACCESS_TOKEN);
 ```
 Также вы можете отдельно указать секретный ключ вашего приложения. Это нужно для того случая, если вы указали сервисный ключ доступа. В данном случае, если не указать секретный ключ, возможны ошибки.
-```
+```java
         VkAuth vkAuth = new VkAuth().setAccessToken(ACCESS_TOKEN).setClientSecret(CLIENT_SECRET);
 ```
 Подробнее об авторизации вы можете узнать в [официальной документации](https://vk.com/dev/access_token).
@@ -56,14 +56,14 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/vkAuth/VkAuth.html
 ## Создание объекта VkApi
 https://heatalways.github.io/vkapi/ru/heat/vkapi/VkApi.html
 
-```
+```java
         VkApi vkApi = new VkApi(vkAuth);
 ```
 
 # Методы
 
 Для того, чтобы вызвать метод, вам нужно обратиться к нему
-```
+```java
         vkApi.PREFIX.METHOD(PARAMS);
 ```
 * OBJECT - префикс метода (account, users, friends...)
@@ -71,11 +71,11 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/VkApi.html
 * PARAMS - параметры типа String: "param1=value1","param2=value2"
 
 Пример
-```
+```java
         vkApi.users.get("user_ids=1,2,3","fields=connections,sex");
 ```
 Этот метод вернет объект класса JsonHandler
-```
+```java
 [{"sex":2,"last_name":"Дуров","id":1,"first_name":"Павел"},{"sex":1,"last_name":"Владимирова","id":2,"first_name":"Александра"},{"sex":0,"last_name":"","id":3,"first_name":"DELETED","deactivated":"deleted"}]
 ```
 Полный список методов вы можете найти [здесь](https://vk.com/dev/methods).
@@ -84,13 +84,13 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/VkApi.html
 https://heatalways.github.io/vkapi/ru/heat/vkapi/jsonHandler/JsonHandler.html
 
 Пример 1
-```
+```java
         JsonHandler users = vkApi.users.get("user_ids=1,2,3","fields=connections,sex");
         JsonHandler first_user = users.get(0);
         String name = first_user.get("first_name").toString();
 ```
 Пример 2
-```
+```java
         JsonHandler users = vkApi.users.get("user_ids=1,2,3","fields=connection,sex");
         for (JsonHandler user : users.toArray()) {
             System.out.println(user.get("first_name"));
@@ -101,7 +101,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/jsonHandler/JsonHandler.html
 https://heatalways.github.io/vkapi/ru/heat/vkapi/longPollAPI/BotsLongPollApi.html
 
 Шаблон подключения Bots Long Poll API
-```
+```java
         BotsLongPollApi botsLongPollApi = new BotsLongPollApi(VK_API, GROUP_ID, WAIT);
         botsLongPollApi.setBotsMessageHandler(new BotsMessageHandler() {
             @Override
@@ -117,7 +117,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/longPollAPI/BotsLongPollApi.htm
 https://heatalways.github.io/vkapi/ru/heat/vkapi/longPollAPI/UserLongPollApi.html
 
 Шаблон подключения User Long Poll API
-```
+```java
         UserLongPollApi userLongPollApi = new UserLongPollApi(
             VK_API,
             NEED_POINTS,
@@ -140,7 +140,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/longPollAPI/UserLongPollApi.htm
 https://heatalways.github.io/vkapi/ru/heat/vkapi/streamingAPI/StreamingApi.html
 
 ## Создание объекта
-```
+```java
         StreamingApi streamingApi = new StreamingApi(VK_API);
 ```
 
@@ -148,17 +148,17 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/streamingAPI/StreamingApi.html
 https://heatalways.github.io/vkapi/ru/heat/vkapi/streamingAPI/Rules.html
 
 Добавление правила
-```
+```java
         streamingApi.rules.add(VALUE, TAG);
 ```
 
 Удаление правила
-```
+```java
         streamingApi.rules.delete(TAG);
 ```
 
 Получение правил
-```
+```java
         streamingApi.rules.get();
 ```
 
@@ -166,7 +166,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/streamingAPI/Rules.html
 https://heatalways.github.io/vkapi/ru/heat/vkapi/streamingAPI/Stream.html
 
 Чтение потока
-```
+```java
         streamingApi.stream.setStreamMessageHandler(new StreamMessageHandler() {
             @Override
             public void onMessage(JsonHandler message) {
@@ -182,7 +182,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/streamingAPI/Stream.html
 https://heatalways.github.io/vkapi/ru/heat/vkapi/upload/Upload.html
 
 Шаблон загрузки файлов
-```
+```java
         vkApi.upload.OBJECT.upload(PARAMS);
 ```
 * OBJECT - объект загрузки (фото в сообщение{photoToMessage}, фото в альбом{photoToAlbum}...)
@@ -191,7 +191,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/upload/Upload.html
 Для некоторых видов загрузки необходимо вызвать метод "save" или даже "post/send";
 
 Пример 1
-```
+```java
         vkApi.upload.photoToAlbum.upload(
             ALBUM_ID,
             FILES
@@ -199,7 +199,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/upload/Upload.html
 ```
 
 Пример 2
-```
+```java
         vkApi.upload.productPhoto.upload(
                 GROUP_ID,
                 MAIN_PHOTO,
@@ -208,7 +208,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/upload/Upload.html
 ```
 
 Пример 3
-```
+```java
         vkApi.upload.photoToMessage.upload(
                 PEER_ID,
                 FILE
