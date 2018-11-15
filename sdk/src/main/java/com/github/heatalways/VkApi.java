@@ -49,10 +49,11 @@ import java.io.IOException;
 public class VkApi {
     private String secret;
     private String access_token;
-    private final String v = "5.87";
     private final String lang = "ru";
 
-    private final FinalURL finalURL = new FinalURL(this);
+    public static final String v = "5.87";
+
+    private final FinalURL finalURL;
 
     public final Users users = new Users(this);
     public final Account account = new Account(this);
@@ -99,6 +100,7 @@ public class VkApi {
      */
     public VkApi(VkAuth auth) throws IOException {
         try {
+            finalURL = new FinalURL(this);
             auth.authorize();
             this.access_token = auth.getAccessToken();
             this.secret = auth.getClientSecret();
@@ -120,9 +122,6 @@ public class VkApi {
     }
     public FinalURL getFinalURL() {
         return finalURL;
-    }
-    public String getVersion() {
-        return v;
     }
     public String getLanguage() {
         return lang;

@@ -42,7 +42,7 @@ public class Stream {
     /**
      * Запуск потока для чтения данных
      */
-    private void connect() {
+    public void start() {
         webSocket.connect();
     }
 
@@ -55,7 +55,6 @@ public class Stream {
      */
     public Stream setStreamMessageHandler(StreamMessageHandler streamMessageHandler) {
         this.streamMessageHandler = streamMessageHandler;
-        connect();
         return this;
     }
 }

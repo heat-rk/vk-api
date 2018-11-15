@@ -102,13 +102,16 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/longPollAPI/BotsLongPollApi.htm
 
 Шаблон подключения Bots Long Poll API
 ```java
-        BotsLongPollApi botsLongPollApi = new BotsLongPollApi(VK_API, GROUP_ID, WAIT);
+        BotsLongPollApi botsLongPollApi = new BotsLongPollApi(
+                VK_API, 
+                GROUP_ID, 
+                WAIT);
         botsLongPollApi.setBotsMessageHandler(new BotsMessageHandler() {
             @Override
             public void METHOD(JsonHandler object) {
                 //some code...
             }
-        });
+        }).start();
 ```
 Вы переопределяете нужные вам методы, на которые будут приходить сообщения в формате JSON.
 Более подробную информацию можно найти [здесь](https://vk.com/dev/bots_longpoll).
@@ -131,7 +134,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/longPollAPI/UserLongPollApi.htm
             public void onResponse(JsonHandler response) {
                 //some code...
             }
-        });
+        }).start();
 ```
 Вы переопределяете метод "onResponse", на который будут приходить сообщения в формате JSON.
 Более подробную информацию можно найти [здесь](https://vk.com/dev/using_longpoll).
@@ -172,7 +175,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/streamingAPI/Stream.html
             public void onMessage(JsonHandler message) {
                 //some code...
             }
-        });
+        }).start();
 ```
 
 Вы переопределяете метод "onMessage", на который будут приходить сообщения в формате JSON.
