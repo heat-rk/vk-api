@@ -1,7 +1,7 @@
 package com.github.heatalways.vkAuth;
 
 import com.github.heatalways.utils.Request;
-import ru.heat.vkapi.utils.Request;
+import com.github.heatalways.utils.Request;
 
 import java.io.IOException;
 

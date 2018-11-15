@@ -1,9 +1,9 @@
 package com.github.heatalways.longPollAPI;
 
 import com.github.heatalways.jsonHandler.JsonHandler;
-import ru.heat.vkapi.jsonHandler.JsonHandler;
-import ru.heat.vkapi.VkApi;
-import ru.heat.vkapi.utils.Request;
+import com.github.heatalways.jsonHandler.JsonHandler;
+import com.github.heatalways.VkApi;
+import com.github.heatalways.utils.Request;
 
 /**
  * Класс для работы с BotsLongPollApi.
@@ -31,7 +31,6 @@ public class BotsLongPollApi {
         server = response.get("server").toString();
         key = response.get("key").toString();
         ts = response.get("ts").toString();
-        start();
     }
     private void check(JsonHandler updates) {
         if (updates.toArray().length > 0) {
@@ -124,7 +123,7 @@ public class BotsLongPollApi {
         this.botsMessageHandler = botsMessageHandler;
         return this;
     }
-    private void start() {
+    public void start() {
         new Thread(new Runnable() {
             public void run() {
                 while (true) {

@@ -2,8 +2,8 @@ package com.github.heatalways.streamingAPI;
 
 import com.github.heatalways.jsonHandler.JsonHandler;
 import org.java_websocket.drafts.Draft_6455;
-import ru.heat.vkapi.jsonHandler.JsonHandler;
-import ru.heat.vkapi.utils.WebSocket;
+import com.github.heatalways.jsonHandler.JsonHandler;
+import com.github.heatalways.utils.WebSocket;
 
 import java.net.URI;
 import java.net.URISyntaxException;

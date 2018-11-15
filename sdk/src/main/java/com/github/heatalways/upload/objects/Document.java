@@ -5,11 +5,11 @@ import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.upload.BodyOfRequest;
 import com.github.heatalways.upload.UploadObject;
 import com.github.heatalways.utils.ArrayToString;
-import ru.heat.vkapi.VkApi;
-import ru.heat.vkapi.jsonHandler.JsonHandler;
-import ru.heat.vkapi.upload.BodyOfRequest;
-import ru.heat.vkapi.upload.UploadObject;
-import ru.heat.vkapi.utils.ArrayToString;
+import com.github.heatalways.VkApi;
+import com.github.heatalways.jsonHandler.JsonHandler;
+import com.github.heatalways.upload.BodyOfRequest;
+import com.github.heatalways.upload.UploadObject;
+import com.github.heatalways.utils.ArrayToString;
 
 import java.io.File;
 

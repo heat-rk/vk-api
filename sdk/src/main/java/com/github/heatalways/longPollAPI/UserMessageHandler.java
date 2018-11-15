@@ -1,6 +1,6 @@
 package com.github.heatalways.longPollAPI;
 
-import ru.heat.vkapi.jsonHandler.JsonHandler;
+import com.github.heatalways.jsonHandler.JsonHandler;
 
 public class UserMessageHandler {
     public void onResponse(JsonHandler response) {}

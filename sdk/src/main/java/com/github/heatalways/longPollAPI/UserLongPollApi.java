@@ -1,9 +1,9 @@
 package com.github.heatalways.longPollAPI;
 
 import com.github.heatalways.jsonHandler.JsonHandler;
-import ru.heat.vkapi.jsonHandler.JsonHandler;
-import ru.heat.vkapi.VkApi;
-import ru.heat.vkapi.utils.Request;
+import com.github.heatalways.jsonHandler.JsonHandler;
+import com.github.heatalways.VkApi;
+import com.github.heatalways.utils.Request;
 
 /**
  * Класс для работы с UserLongPollApi.
@@ -32,7 +32,7 @@ public class UserLongPollApi {
      */
     public UserLongPollApi(VkApi vkApi, int need_pts, String group_id, int wait, int mode, int version) {
         JsonHandler response = vkApi.messages.getLongPollServer(
-                "need_pts" + need_pts,
+                "need_pts=" + need_pts,
                 "group_id=" + group_id,
                 "lp_version=" + version);
         this.key = response.get("key").toString();
@@ -41,13 +41,12 @@ public class UserLongPollApi {
         this.mode = mode;
         this.wait = wait;
         this.version = version;
-        start();
     }
     public UserLongPollApi setUserMessageHandler(UserMessageHandler userMessageHandler) {
         this.userMessageHandler = userMessageHandler;
         return this;
     }
-    private void start() {
+    public void start() {
         new Thread(new Runnable() {
             @Override
             public void run() {

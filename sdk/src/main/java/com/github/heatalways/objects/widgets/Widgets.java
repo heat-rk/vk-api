@@ -1,8 +1,8 @@
 package com.github.heatalways.objects.widgets;
 
-import ru.heat.vkapi.jsonHandler.JsonHandler;
-import ru.heat.vkapi.VkApi;
-import ru.heat.vkapi.utils.Request;
+import com.github.heatalways.jsonHandler.JsonHandler;
+import com.github.heatalways.VkApi;
+import com.github.heatalways.utils.Request;
 
 /**
  * Класс для работы с методами объекта Widgets.

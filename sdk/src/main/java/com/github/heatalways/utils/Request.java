@@ -1,7 +1,7 @@
 package com.github.heatalways.utils;
 
 import com.github.heatalways.jsonHandler.JsonHandler;
-import ru.heat.vkapi.jsonHandler.JsonHandler;
+import com.github.heatalways.jsonHandler.JsonHandler;
 
 import java.io.IOException;
 import java.net.URL;

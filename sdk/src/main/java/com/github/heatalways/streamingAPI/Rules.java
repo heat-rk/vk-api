@@ -1,8 +1,8 @@
 package com.github.heatalways.streamingAPI;
 
 import com.github.heatalways.jsonHandler.JsonHandler;
-import ru.heat.vkapi.jsonHandler.JsonHandler;
-import ru.heat.vkapi.utils.Request;
+import com.github.heatalways.jsonHandler.JsonHandler;
+import com.github.heatalways.utils.Request;
 
 /**
  * Класс для работы с правилами StreamingApi.

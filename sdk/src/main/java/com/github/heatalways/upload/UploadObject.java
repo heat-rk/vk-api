@@ -2,8 +2,8 @@ package com.github.heatalways.upload;
 
 import com.github.heatalways.VkApi;
 import com.github.heatalways.jsonHandler.JsonHandler;
-import ru.heat.vkapi.VkApi;
-import ru.heat.vkapi.jsonHandler.JsonHandler;
+import com.github.heatalways.VkApi;
+import com.github.heatalways.jsonHandler.JsonHandler;
 
 public class UploadObject {
     public final VkApi vkApi;

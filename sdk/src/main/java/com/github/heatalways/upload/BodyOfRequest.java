@@ -6,7 +6,7 @@ import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.entity.mime.content.FileBody;
 import org.apache.http.entity.mime.content.StringBody;
-import ru.heat.vkapi.utils.HttpPost;
+import com.github.heatalways.utils.HttpPost;
 
 import java.io.*;
 

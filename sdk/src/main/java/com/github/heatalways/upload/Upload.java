@@ -1,8 +1,8 @@
 package com.github.heatalways.upload;
 
 import com.github.heatalways.VkApi;
-import ru.heat.vkapi.VkApi;
-import ru.heat.vkapi.upload.objects.*;
+import com.github.heatalways.VkApi;
+import com.github.heatalways.upload.objects.*;
 
 /**
  * Класс для загрузки файлов.

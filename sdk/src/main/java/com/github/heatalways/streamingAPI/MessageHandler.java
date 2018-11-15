@@ -1,7 +1,7 @@
 package com.github.heatalways.streamingAPI;
 
 import com.github.heatalways.jsonHandler.JsonHandler;
-import ru.heat.vkapi.jsonHandler.JsonHandler;
+import com.github.heatalways.jsonHandler.JsonHandler;
 
 /**
  * Обработчик входящих сообщений StreamingApi
