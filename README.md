@@ -12,6 +12,17 @@ https://heatalways.github.io/vkapi/
 * [Apache HttpClient и Apache HttpMime](http://hc.apache.org/httpcomponents-client-4.5.x/index.html) версия 4.5.3
 * [Java-Websocket](https://github.com/TooTallNate/Java-WebSocket) версия 1.3.9
 
+#Maven зависимость
+
+```xml
+        <dependency>
+            <groupId>com.github.heatalways</groupId>
+            <artifactId>api</artifactId>
+            <version>VERSION</version>
+        </dependency>
+```
+Последняя версия: 1.8.7
+
 # Начало
 ## Авторизация
 https://heatalways.github.io/vkapi/ru/heat/vkapi/vkAuth/VkAuth.html
