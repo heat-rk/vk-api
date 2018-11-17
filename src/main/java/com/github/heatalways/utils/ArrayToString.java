@@ -20,6 +20,8 @@ public class ArrayToString {
             return str.toString();
         } catch (ArrayIndexOutOfBoundsException e) {
             return "";
+        } catch (NullPointerException e) {
+            return "";
         }
     }
 }
