@@ -13,7 +13,7 @@ https://heatalways.github.io/vkapi/
 * [Java-Websocket](https://github.com/TooTallNate/Java-WebSocket) версия 1.3.9
 
 # Maven зависимость
-
+[![Maven Central](https://img.shields.io/badge/Maven%20Central-1.8.7-green.svg).](http://central.maven.org/maven2/com/github/heatalways/api)
 ```xml
         <dependency>
             <groupId>com.github.heatalways</groupId>
