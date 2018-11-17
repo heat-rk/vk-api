@@ -3,4 +3,5 @@ idea/
 target/
 .idea
 *.iml
+*.asc
 sdk/**/Main.java
