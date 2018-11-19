@@ -1,6 +1,5 @@
 package com.github.heatalways.streamingAPI;
 
-import com.github.heatalways.jsonHandler.JsonHandler;
 import org.java_websocket.drafts.Draft_6455;
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.utils.WebSocket;

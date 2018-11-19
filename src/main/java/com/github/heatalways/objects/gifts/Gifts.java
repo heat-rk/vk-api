@@ -1,11 +1,7 @@
 package com.github.heatalways.objects.gifts;
 
+import com.github.heatalways.objects.MethodObject;
 import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.utils.Request;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.VkApi;
-import com.github.heatalways.utils.Request;
 
 /**
  * Класс для работы с методами объекта Gifts.
@@ -13,17 +9,11 @@ import com.github.heatalways.utils.Request;
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-public class Gifts {
+public class Gifts extends MethodObject {
+    public final static String get = "get";
 
-    private final VkApi vkApi;
     public Gifts(VkApi vkApi) {
-        this.vkApi = vkApi;
-    }
-    
-    //get
-    public JsonHandler get(String... args) {
-        String url = vkApi.getFinalURL().get("gifts.get",
-                args);
-        return new JsonHandler(Request.get(url));
+        super(vkApi);
+        object = "gifts";
     }
 }

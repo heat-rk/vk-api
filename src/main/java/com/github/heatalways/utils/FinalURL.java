@@ -1,7 +1,6 @@
 package com.github.heatalways.utils;
 
 import com.github.heatalways.VkApi;
-import com.github.heatalways.VkApi;
 
 /**
  * Класс для получения URL для дальнешей работы с ним.

@@ -1,10 +1,7 @@
 package com.github.heatalways.upload.objects;
 
-import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.upload.BodyOfRequest;
-import com.github.heatalways.upload.UploadObject;
-import com.github.heatalways.utils.ArrayToString;
+import com.github.heatalways.objects.market.Market;
+import com.github.heatalways.objects.photos.Photos;
 import com.github.heatalways.VkApi;
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.upload.BodyOfRequest;
@@ -32,8 +29,8 @@ public class AlbumProductPhoto extends UploadObject {
      */
     public AlbumProductPhoto upload(String group_id, File file) {
         this.group_id = group_id;
-        String upload_url = vkApi.photos.getMarketAlbumUploadServer(
-                "group_id=" + group_id).get("upload_url").toString();
+        String upload_url = vkApi.photos.method(Photos.getMarketAlbumUploadServer).params(
+                "group_id=" + group_id).execute().get("upload_url").toString();
         response = new JsonHandler(BodyOfRequest.getMarketAlbumPhoto(upload_url, file));
         return this;
     }
@@ -43,12 +40,12 @@ public class AlbumProductPhoto extends UploadObject {
      * @return объект класса AlbumProductPhoto
      */
     public AlbumProductPhoto save() {
-        response = vkApi.photos.saveMarketAlbumPhoto(
+        response = vkApi.photos.method(Photos.saveMarketAlbumPhoto).params(
             "group_id=" + group_id,
                 "photo=" + response.get("photo"),
                 "server=" + response.get("server"),
                 "hash=" + response.get("hash")
-        ).get(0);
+        ).execute().get(0);
         return this;
     }
 
@@ -58,11 +55,11 @@ public class AlbumProductPhoto extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler addAlbum(String... args) {
-        return vkApi.market.addAlbum(
+        return vkApi.market.method(Market.addAlbum).params(
             "owner_id=-" + group_id,
                 "photo_id=" + response.get("id"),
                 ArrayToString.toStr(args)
-        );
+        ).execute();
     }
 
     /**
@@ -71,10 +68,10 @@ public class AlbumProductPhoto extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler editAlbum(String... args) {
-        return vkApi.market.editAlbum(
+        return vkApi.market.method(Market.editAlbum).params(
                 "owner_id=-" + group_id,
                 "photo_id=" + response.get("id"),
                 ArrayToString.toStr(args)
-        );
+        ).execute();
     }
 }

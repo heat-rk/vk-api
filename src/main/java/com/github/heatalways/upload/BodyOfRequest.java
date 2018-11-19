@@ -1,6 +1,5 @@
 package com.github.heatalways.upload;
 
-import com.github.heatalways.utils.HttpPost;
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntityBuilder;

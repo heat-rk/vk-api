@@ -1,237 +1,45 @@
 package com.github.heatalways.objects.video;
 
+import com.github.heatalways.objects.MethodObject;
 import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.utils.Request;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.VkApi;
-import com.github.heatalways.utils.Request;
 
 /**
- * Класс для работы с методами объекта Video.
+ * Класс для работы с методами объекта VideoUpload.
  * Подробнее на https://vk.com/dev/video
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-public class Video {
+public class Video extends MethodObject {
+    public final static String add = "add";
+    public final static String addAlbum = "addAlbum";
+    public final static String addToAlbum = "addToAlbum";
+    public final static String createComment = "createComment";
+    public final static String delete = "delete";
+    public final static String deleteAlbum = "deleteAlbum";
+    public final static String deleteComment = "deleteComment";
+    public final static String edit = "edit";
+    public final static String editAlbum = "editAlbum";
+    public final static String editComment = "editComment";
+    public final static String get = "get";
+    public final static String getAlbums = "getAlbums";
+    public final static String getAlbumById = "getAlbumById";
+    public final static String getAlbumsByVideo = "getAlbumsByVideo";
+    public final static String getCatalog = "getCatalog";
+    public final static String getCatalogSection = "getCatalogSection";
+    public final static String getComments = "getComments";
+    public final static String hideCatalogSection = "hideCatalogSection";
+    public final static String removeFromAlbum = "removeFromAlbum";
+    public final static String reorderAlbums = "reorderAlbums";
+    public final static String reorderVideos = "reorderVideos";
+    public final static String report = "report";
+    public final static String reportComment = "reportComment";
+    public final static String restore = "restore";
+    public final static String restoreComment = "restoreComment";
+    public final static String save = "save";
+    public final static String search = "search";
 
-    private final VkApi vkApi;
     public Video(VkApi vkApi) {
-        this.vkApi = vkApi;
-    }
-
-    //add
-    public JsonHandler add(String... args) {
-        String url = vkApi.getFinalURL().get("video.add",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //addAlbum
-    public JsonHandler addAlbum(String... args) {
-        String url = vkApi.getFinalURL().get("video.addAlbum",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //addToAlbum
-    public JsonHandler addToAlbum(String... args) {
-        String url = vkApi.getFinalURL().get("video.addToAlbum",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //createComment
-    public JsonHandler createComment(String... args) {
-        String url = vkApi.getFinalURL().get("video.createComment",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //delete
-    public JsonHandler delete(String... args) {
-        String url = vkApi.getFinalURL().get("video.delete",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //deleteAlbum
-    public JsonHandler deleteAlbum(String... args) {
-        String url = vkApi.getFinalURL().get("video.deleteAlbum",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //deleteComment
-    public JsonHandler deleteComment(String... args) {
-        String url = vkApi.getFinalURL().get("video.deleteComment",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //edit
-    public JsonHandler edit(String... args) {
-        String url = vkApi.getFinalURL().get("video.edit",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //editAlbum
-    public JsonHandler editAlbum(String... args) {
-        String url = vkApi.getFinalURL().get("video.editAlbum",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //editComment
-    public JsonHandler editComment(String... args) {
-        String url = vkApi.getFinalURL().get("video.editComment",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //get
-    public JsonHandler get(String... args) {
-        String url = vkApi.getFinalURL().get("video.get",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getAlbumById
-    public JsonHandler getAlbumById(String... args) {
-        String url = vkApi.getFinalURL().get("video.getAlbumById",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getAlbums
-    public JsonHandler getAlbums(String... args) {
-        String url = vkApi.getFinalURL().get("video.getAlbums",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getAlbumsByVideo
-    public JsonHandler getAlbumsByVideo(String... args) {
-        String url = vkApi.getFinalURL().get("video.getAlbumsByVideo",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getCatalog
-    public JsonHandler getCatalog(String... args) {
-        String url = vkApi.getFinalURL().get("video.getCatalog",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getCatalogSection
-    public JsonHandler getCatalogSection(String... args) {
-        String url = vkApi.getFinalURL().get("video.getCatalogSection",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getComments
-    public JsonHandler getComments(String... args) {
-        String url = vkApi.getFinalURL().get("video.getComments",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //hideCatalogSection
-    public JsonHandler hideCatalogSection(String... args) {
-        String url = vkApi.getFinalURL().get("video.hideCatalogSection",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //removeFromAlbum
-    public JsonHandler removeFromAlbum(String... args) {
-        String url = vkApi.getFinalURL().get("video.removeFromAlbum",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //reorderAlbums
-    public JsonHandler reorderAlbums(String... args) {
-        String url = vkApi.getFinalURL().get("video.reorderAlbums",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //reorderVideos
-    public JsonHandler reorderVideos(String... args) {
-        String url = vkApi.getFinalURL().get("video.reorderVideos",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //report
-    public JsonHandler report(String... args) {
-        String url = vkApi.getFinalURL().get("video.report",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //reportComment
-    public JsonHandler reportComment(String... args) {
-        String url = vkApi.getFinalURL().get("video.reportComment",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //restore
-    public JsonHandler restore(String... args) {
-        String url = vkApi.getFinalURL().get("video.restore",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //restoreComment
-    public JsonHandler restoreComment(String... args) {
-        String url = vkApi.getFinalURL().get("video.restoreComment",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //save
-    public JsonHandler save(String... args) {
-        String url = vkApi.getFinalURL().get("video.save",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //search
-    public JsonHandler search(String... args) {
-        String url = vkApi.getFinalURL().get("video.search",
-                args);
-        return new JsonHandler(Request.get(url));
+        super(vkApi);
+        object = "video";
     }
 }

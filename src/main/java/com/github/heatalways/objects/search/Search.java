@@ -1,8 +1,7 @@
 package com.github.heatalways.objects.search;
 
-import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.VkApi;
-import com.github.heatalways.utils.Request;
+import com.github.heatalways.objects.MethodObject;
 
 /**
  * Класс для работы с методами объекта Search.
@@ -10,17 +9,11 @@ import com.github.heatalways.utils.Request;
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-public class Search {
+public class Search extends MethodObject {
+    public final static String getHints = "getHints";
 
-    private final VkApi vkApi;
     public Search(VkApi vkApi) {
-        this.vkApi = vkApi;
-    }
-
-    //getHints
-    public JsonHandler getHints(String... args) {
-        String url = vkApi.getFinalURL().get("search.getHints",
-                args);
-        return new JsonHandler(Request.get(url));
+        super(vkApi);
+        object = "search";
     }
 }

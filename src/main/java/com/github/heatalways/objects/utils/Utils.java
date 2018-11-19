@@ -1,11 +1,7 @@
 package com.github.heatalways.objects.utils;
 
+import com.github.heatalways.objects.MethodObject;
 import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.utils.Request;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.VkApi;
-import com.github.heatalways.utils.Request;
 
 /**
  * Класс для работы с методами объекта Utils.
@@ -13,64 +9,17 @@ import com.github.heatalways.utils.Request;
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-public class Utils {
+public class Utils extends MethodObject {
+    public final static String checkLink = "checkLink";
+    public final static String deleteFromLastShortened = "deleteFromLastShortened";
+    public final static String getLastShortenedLinks = "getLastShortenedLinks";
+    public final static String getLinkStats = "getLinkStats";
+    public final static String getServerTime = "getServerTime";
+    public final static String getShortLink = "getShortLink";
+    public final static String resolveScreenName = "resolveScreenName";
 
-    private final VkApi vkApi;
     public Utils(VkApi vkApi) {
-        this.vkApi = vkApi;
-    }
-
-    //checkLink
-    public JsonHandler checkLink(String... args) {
-        String url = vkApi.getFinalURL().get("utils.checkLink",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //deleteFromLastShortened
-    public JsonHandler deleteFromLastShortened(String... args) {
-        String url = vkApi.getFinalURL().get("utils.deleteFromLastShortened",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getLastShortenedLinks
-    public JsonHandler getLastShortenedLinks(String... args) {
-        String url = vkApi.getFinalURL().get("utils.getLastShortenedLinks",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getLinkStats
-    public JsonHandler getLinkStats(String... args) {
-        String url = vkApi.getFinalURL().get("utils.getLinkStats",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getServerTime
-    public JsonHandler getServerTime() {
-        String url = vkApi.getFinalURL().get("utils.getServerTime");
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getShortLink
-    public JsonHandler getShortLink(String... args) {
-        String url = vkApi.getFinalURL().get("utils.getShortLink",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //resolveScreenName
-    public JsonHandler resolveScreenName(String... args) {
-        String url = vkApi.getFinalURL().get("utils.resolveScreenName",
-                args);
-        return new JsonHandler(Request.get(url));
+        super(vkApi);
+        object = "utils";
     }
 }

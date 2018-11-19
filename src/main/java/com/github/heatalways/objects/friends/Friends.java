@@ -1,8 +1,7 @@
 package com.github.heatalways.objects.friends;
 
-import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.VkApi;
-import com.github.heatalways.utils.Request;
+import com.github.heatalways.objects.MethodObject;
 
 /**
  * Класс для работы с методами объекта Friends.
@@ -10,151 +9,28 @@ import com.github.heatalways.utils.Request;
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-public class Friends {
+public class Friends extends MethodObject {
+    public final static String add = "add";
+    public final static String addList = "addList";
+    public final static String areFriends = "areFriends";
+    public final static String delete = "delete";
+    public final static String deleteAllRequests = "deleteAllRequests";
+    public final static String deleteList = "deleteList";
+    public final static String edit = "edit";
+    public final static String editList = "editList";
+    public final static String get = "get";
+    public final static String getAppUsers = "getAppUsers";
+    public final static String getByPhones = "getByPhones";
+    public final static String getLists = "getLists";
+    public final static String getMutual = "getMutual";
+    public final static String getOnline = "getOnline";
+    public final static String getRecent = "getRecent";
+    public final static String getRequests = "getRequests";
+    public final static String getSuggestions = "getSuggestions";
+    public final static String search = "search";
 
-    private final VkApi vkApi;
     public Friends(VkApi vkApi) {
-        this.vkApi = vkApi;
-    }
-    
-    //add
-    public JsonHandler add(String... args) {
-        String url = vkApi.getFinalURL().get("friends.add",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //addList
-    public JsonHandler addList(String... args) {
-        String url = vkApi.getFinalURL().get("friends.addList",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //areFriends
-    public JsonHandler areFriends(String... args) {
-        String url = vkApi.getFinalURL().get("friends.areFriends",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //delete
-    public JsonHandler delete(String... args) {
-        String url = vkApi.getFinalURL().get("friends.delete",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //deleteAllRequests
-    public JsonHandler deleteAllRequests() {
-        String url = vkApi.getFinalURL().get("friends.deleteAllRequests");
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //deleteList
-    public JsonHandler deleteList(String... args) {
-        String url = vkApi.getFinalURL().get("friends.deleteList",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //edit
-    public JsonHandler edit(String... args) {
-        String url = vkApi.getFinalURL().get("friends.edit",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //editList
-    public JsonHandler editList(String... args) {
-        String url = vkApi.getFinalURL().get("friends.editList",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //get
-    public JsonHandler get(String... args) {
-        String url = vkApi.getFinalURL().get("friends.get",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getAppUsers
-    public JsonHandler getAppUsers() {
-        String url = vkApi.getFinalURL().get("friends.getAppUsers");
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getByPhones
-    public JsonHandler getByPhones(String... args) {
-        String url = vkApi.getFinalURL().get("friends.getByPhones",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getLists
-    public JsonHandler getLists(String... args) {
-        String url = vkApi.getFinalURL().get("friends.getLists",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getMutual
-    public JsonHandler getMutual(String... args) {
-        String url = vkApi.getFinalURL().get("friends.getMutual",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getOnline
-    public JsonHandler getOnline(String... args) {
-        String url = vkApi.getFinalURL().get("friends.getOnline",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getRecent
-    public JsonHandler getRecent(String... args) {
-        String url = vkApi.getFinalURL().get("friends.getRecent",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getRequests
-    public JsonHandler getRequests(String... args) {
-        String url = vkApi.getFinalURL().get("friends.getRequests",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getSuggestions
-    public JsonHandler getSuggestions(String... args) {
-        String url = vkApi.getFinalURL().get("friends.getSuggestions",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //search
-    public JsonHandler search(String... args) {
-        String url = vkApi.getFinalURL().get("friends.search",
-                args);
-        return new JsonHandler(Request.get(url));
+        super(vkApi);
+        object = "friends";
     }
 }

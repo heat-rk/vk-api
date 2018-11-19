@@ -1,11 +1,7 @@
 package com.github.heatalways.objects.leads;
 
+import com.github.heatalways.objects.MethodObject;
 import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.utils.Request;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.VkApi;
-import com.github.heatalways.utils.Request;
 
 /**
  * Класс для работы с методами объекта Leads.
@@ -13,57 +9,16 @@ import com.github.heatalways.utils.Request;
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-public class Leads {
+public class Leads extends MethodObject {
+    public final static String checkUser = "checkUser";
+    public final static String complete = "complete";
+    public final static String getStats = "getStats";
+    public final static String getUsers = "getUsers";
+    public final static String metricHit = "metricHit";
+    public final static String start = "start";
 
-    private final VkApi vkApi;
     public Leads(VkApi vkApi) {
-        this.vkApi = vkApi;
-    }
-
-    //checkUser
-    public JsonHandler checkUser(String... args) {
-        String url = vkApi.getFinalURL().get("leads.checkUser",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //complete
-    public JsonHandler complete(String... args) {
-        String url = vkApi.getFinalURL().get("leads.complete",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getStats
-    public JsonHandler getStats(String... args) {
-        String url = vkApi.getFinalURL().get("leads.getStats",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getUsers
-    public JsonHandler getUsers(String... args) {
-        String url = vkApi.getFinalURL().get("leads.getUsers",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //metricHit
-    public JsonHandler metricHit(String... args) {
-        String url = vkApi.getFinalURL().get("leads.metricHit",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //start
-    public JsonHandler start(String... args) {
-        String url = vkApi.getFinalURL().get("leads.start",
-                args);
-        return new JsonHandler(Request.get(url));
+        super(vkApi);
+        object = "leads";
     }
 }

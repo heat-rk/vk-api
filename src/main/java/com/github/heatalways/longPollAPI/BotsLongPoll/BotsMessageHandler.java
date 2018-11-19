@@ -1,8 +1,9 @@
-package com.github.heatalways.longPollAPI;
+package com.github.heatalways.longPollAPI.BotsLongPoll;
 
 import com.github.heatalways.jsonHandler.JsonHandler;
+import com.github.heatalways.longPollAPI.MessageHandlerObject;
 
-public class BotsMessageHandler {
+public class BotsMessageHandler extends MessageHandlerObject {
     public void message_new(JsonHandler object) {}
     public void message_reply(JsonHandler object) {}
     public void message_edit(JsonHandler object) {}

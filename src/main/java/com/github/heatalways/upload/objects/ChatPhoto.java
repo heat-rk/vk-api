@@ -1,10 +1,7 @@
 package com.github.heatalways.upload.objects;
 
-import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.upload.BodyOfRequest;
-import com.github.heatalways.upload.UploadObject;
-import com.github.heatalways.utils.ArrayToString;
+import com.github.heatalways.objects.messages.Messages;
+import com.github.heatalways.objects.photos.Photos;
 import com.github.heatalways.VkApi;
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.upload.BodyOfRequest;
@@ -31,9 +28,9 @@ public class ChatPhoto extends UploadObject {
      * @return объект класса ChatPhoto
      */
     public ChatPhoto upload(String chat_id, File file, String... args) {
-        String upload_url = vkApi.photos.getChatUploadServer(
+        String upload_url = vkApi.photos.method(Photos.getChatUploadServer).params(
                 "chat_id=" + chat_id,
-                ArrayToString.toStr(args)).get("upload_url").toString();
+                ArrayToString.toStr(args)).execute().get("upload_url").toString();
         response = new JsonHandler(BodyOfRequest.chatPhoto(upload_url, file));
         return this;
     }
@@ -43,8 +40,8 @@ public class ChatPhoto extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler save() {
-        return vkApi.messages.setChatPhoto(
+        return vkApi.messages.method(Messages.setChatPhoto).params(
             "file=" + response.get("response")
-        );
+        ).execute();
     }
 }

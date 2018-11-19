@@ -1,11 +1,7 @@
 package com.github.heatalways.objects.stats;
 
+import com.github.heatalways.objects.MethodObject;
 import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.utils.Request;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.VkApi;
-import com.github.heatalways.utils.Request;
 
 /**
  * Класс для работы с методами объекта Stats.
@@ -13,32 +9,13 @@ import com.github.heatalways.utils.Request;
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-public class Stats {
+public class Stats extends MethodObject {
+    public final static String get = "get";
+    public final static String getPostReach = "getPostReach";
+    public final static String trackVisitor = "trackVisitor";
 
-    private final VkApi vkApi;
     public Stats(VkApi vkApi) {
-        this.vkApi = vkApi;
-    }
-
-    //get
-    public JsonHandler get(String... args) {
-        String url = vkApi.getFinalURL().get("stats.get",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getPostReach
-    public JsonHandler getPostReach(String... args) {
-        String url = vkApi.getFinalURL().get("stats.getPostReach",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //trackVisitor
-    public JsonHandler trackVisitor() {
-        String url = vkApi.getFinalURL().get("stats.trackVisitor");
-        return new JsonHandler(Request.get(url));
+        super(vkApi);
+        object = "stats";
     }
 }

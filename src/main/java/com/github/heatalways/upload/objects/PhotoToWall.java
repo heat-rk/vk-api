@@ -1,10 +1,7 @@
 package com.github.heatalways.upload.objects;
 
-import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.upload.BodyOfRequest;
-import com.github.heatalways.upload.UploadObject;
-import com.github.heatalways.utils.ArrayToString;
+import com.github.heatalways.objects.photos.Photos;
+import com.github.heatalways.objects.wall.Wall;
 import com.github.heatalways.VkApi;
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.upload.BodyOfRequest;
@@ -43,7 +40,8 @@ public class PhotoToWall extends UploadObject {
      */
     public PhotoToWall upload(String group_id, File file) {
         this.group_id = group_id;
-        String upload_url = vkApi.photos.getWallUploadServer("group_id=" + group_id).get("upload_url").toString();
+        String upload_url = vkApi.photos.method(Photos.getWallUploadServer).params(
+                "group_id=" + group_id).execute().get("upload_url").toString();
         response = new JsonHandler(BodyOfRequest.photoToWall(upload_url, file));
         return this;
     }
@@ -54,13 +52,13 @@ public class PhotoToWall extends UploadObject {
      * @return объект класса PhotoToWall
      */
     public PhotoToWall save(String... args) {
-        response = vkApi.photos.saveWallPhoto(
+        response = vkApi.photos.method(Photos.saveWallPhoto).params(
             "group_id=" + group_id,
                 "photo=" + response.get("photo"),
                 "server=" + response.get("server"),
                 "hash=" + response.get("hash"),
                 ArrayToString.toStr(args)
-        ).get(0);
+        ).execute().get(0);
         return this;
     }
 
@@ -70,10 +68,10 @@ public class PhotoToWall extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler post(String... args) {
-        return vkApi.wall.post(
+        return vkApi.wall.method(Wall.post).params(
             "attachments=photo" + response.get("owner_id") + "_" + response.get("id"),
                 "owner_id=-" + group_id,
                 ArrayToString.toStr(args)
-        );
+        ).execute();
     }
 }

@@ -75,17 +75,19 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/VkApi.html
 
 Для того, чтобы вызвать метод, вам нужно обратиться к нему
 ```java
-        vkApi.PREFIX.METHOD(PARAMS);
+        vkApi.PREFIX.method(OBJECT_CLASS.METHOD_NAME).params(PARAMS).execute();
 ```
 * OBJECT - префикс метода (account, users, friends...)
-* METHOD - метод
+* OBJECT_CLASS - класс объекта
+* METHOD_NAME - имя метод
 * PARAMS - параметры типа String: "param1=value1","param2=value2"
 
 Пример
 ```java
-        vkApi.users.get("user_ids=1,2,3","fields=connections,sex");
+        vkApi.users.method(Users.get)
+        .params("user_ids=1,2,3","fields=connections,sex").execute();
 ```
-Этот метод вернет объект класса JsonHandler
+Этот метод вернет объект класса JsonHandler(метод "execute")
 ```java
 [{"sex":2,"last_name":"Дуров","id":1,"first_name":"Павел"},{"sex":1,"last_name":"Владимирова","id":2,"first_name":"Александра"},{"sex":0,"last_name":"","id":3,"first_name":"DELETED","deactivated":"deleted"}]
 ```
@@ -96,13 +98,15 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/jsonHandler/JsonHandler.html
 
 Пример 1
 ```java
-        JsonHandler users = vkApi.users.get("user_ids=1,2,3","fields=connections,sex");
+        JsonHandler users = vkApi.users.method(Users.get)
+        .params("user_ids=1,2,3","fields=connections,sex").execute();
         JsonHandler first_user = users.get(0);
         String name = first_user.get("first_name").toString();
 ```
 Пример 2
 ```java
-        JsonHandler users = vkApi.users.get("user_ids=1,2,3","fields=connection,sex");
+        JsonHandler users = vkApi.users.method(Users.get)
+        .params("user_ids=1,2,3","fields=connection,sex").execute();
         for (JsonHandler user : users.toArray()) {
             System.out.println(user.get("first_name"));
         }
@@ -117,7 +121,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/longPollAPI/BotsLongPollApi.htm
                 VK_API, 
                 GROUP_ID, 
                 WAIT);
-        botsLongPollApi.setBotsMessageHandler(new BotsMessageHandler() {
+        botsLongPollApi.setMessageHandler(new BotsMessageHandler() {
             @Override
             public void METHOD(JsonHandler object) {
                 //some code...
@@ -140,7 +144,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/longPollAPI/UserLongPollApi.htm
             MODE,
             VERSION
         );
-        userLongPollApi.setUserMessageHandler(new UserMessageHandler(){
+        userLongPollApi.setMessageHandler(new UserMessageHandler(){
             @Override
             public void onResponse(JsonHandler response) {
                 //some code...
@@ -197,7 +201,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/upload/Upload.html
 
 Шаблон загрузки файлов
 ```java
-        vkApi.upload.OBJECT.upload(PARAMS);
+        vkApi.upload.OBJECT(PARAMS);
 ```
 * OBJECT - объект загрузки (фото в сообщение{photoToMessage}, фото в альбом{photoToAlbum}...)
 * PARAMS - параметры (файл, группа...)
@@ -206,7 +210,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/upload/Upload.html
 
 Пример 1
 ```java
-        vkApi.upload.photoToAlbum.upload(
+        vkApi.upload.photoToAlbum(
             ALBUM_ID,
             FILES
         ).save();
@@ -214,7 +218,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/upload/Upload.html
 
 Пример 2
 ```java
-        vkApi.upload.productPhoto.upload(
+        vkApi.upload.productPhoto(
                 GROUP_ID,
                 MAIN_PHOTO,
                 FILE
@@ -223,7 +227,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/upload/Upload.html
 
 Пример 3
 ```java
-        vkApi.upload.photoToMessage.upload(
+        vkApi.upload.photoToMessage(
                 PEER_ID,
                 FILE
         ).save().post("message" + MESSAGE);

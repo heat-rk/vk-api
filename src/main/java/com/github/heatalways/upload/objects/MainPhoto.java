@@ -1,9 +1,6 @@
 package com.github.heatalways.upload.objects;
 
-import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.upload.BodyOfRequest;
-import com.github.heatalways.upload.UploadObject;
+import com.github.heatalways.objects.photos.Photos;
 import com.github.heatalways.VkApi;
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.upload.BodyOfRequest;
@@ -70,7 +67,8 @@ public class MainPhoto extends UploadObject {
      * @see MainPhoto#upload(String, File)
      */
     public MainPhoto upload(String group_id, File file, String square_crop) {
-        String upload_url = vkApi.photos.getOwnerPhotoUploadServer("owner_id=-" + group_id).get("upload_url").toString();
+        String upload_url = vkApi.photos.method(Photos.getOwnerPhotoUploadServer).params(
+                "owner_id=-" + group_id).execute().get("upload_url").toString();
         response = new JsonHandler(BodyOfRequest.mainPhoto(upload_url, file, square_crop));
         return this;
     }
@@ -80,10 +78,10 @@ public class MainPhoto extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler save() {
-        return vkApi.photos.saveOwnerPhoto(
+        return vkApi.photos.method(Photos.saveOwnerPhoto).params(
                 "server=" + response.get("server"),
                 "hash=" + response.get("hash"),
                 "photo=" + response.get("photo")
-        );
+        ).execute();
     }
 }

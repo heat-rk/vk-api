@@ -1,9 +1,6 @@
 package com.github.heatalways.upload.objects;
 
-import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.upload.BodyOfRequest;
-import com.github.heatalways.upload.UploadObject;
+import com.github.heatalways.objects.stories.Stories;
 import com.github.heatalways.VkApi;
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.upload.BodyOfRequest;
@@ -27,7 +24,8 @@ public class StoriesPhoto extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler upload(File file, String... args) {
-        String upload_url = vkApi.stories.getPhotoUploadServer(args).get("upload_url").toString();
+        String upload_url = vkApi.stories.method(Stories.getPhotoUploadServer)
+                .params(args).execute().get("upload_url").toString();
         return new JsonHandler(BodyOfRequest.storiesPhoto(upload_url, file));
     }
 }

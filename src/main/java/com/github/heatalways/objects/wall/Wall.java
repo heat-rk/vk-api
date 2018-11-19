@@ -1,11 +1,7 @@
 package com.github.heatalways.objects.wall;
 
+import com.github.heatalways.objects.MethodObject;
 import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.utils.Request;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.VkApi;
-import com.github.heatalways.utils.Request;
 
 /**
  * Класс для работы с методами объекта Wall.
@@ -13,185 +9,32 @@ import com.github.heatalways.utils.Request;
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-public class Wall {
+public class Wall extends MethodObject {
+    public final static String closeComments = "closeComments";
+    public final static String createComment = "createComment";
+    public final static String delete = "delete";
+    public final static String deleteComment = "deleteComment";
+    public final static String edit = "edit";
+    public final static String editAdsStealth = "editAdsStealth";
+    public final static String editComment = "editComment";
+    public final static String get = "get";
+    public final static String getById = "getById";
+    public final static String getComments = "getComments";
+    public final static String getReposts = "getReposts";
+    public final static String openComments = "openComments";
+    public final static String pin = "pin";
+    public final static String post = "post";
+    public final static String postAdsStealth = "postAdsStealth";
+    public final static String reportComment = "reportComment";
+    public final static String reportPost = "reportPost";
+    public final static String repost = "repost";
+    public final static String restore = "restore";
+    public final static String restoreComment = "restoreComment";
+    public final static String search = "search";
+    public final static String unpin = "unpin";
 
-    private final VkApi vkApi;
     public Wall(VkApi vkApi) {
-        this.vkApi = vkApi;
-    }
-
-    //closeComments
-    public JsonHandler closeComments(String... args) {
-        String url = vkApi.getFinalURL().get("wall.closeComments",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //createComment
-    public JsonHandler createComment(String... args) {
-        String url = vkApi.getFinalURL().get("wall.createComment",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //delete
-    public JsonHandler delete(String... args) {
-        String url = vkApi.getFinalURL().get("wall.delete",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //deleteComment
-    public JsonHandler deleteComment(String... args) {
-        String url = vkApi.getFinalURL().get("wall.deleteComment",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //edit
-    public JsonHandler edit(String... args) {
-        String url = vkApi.getFinalURL().get("wall.edit",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //editAdsStealth
-    public JsonHandler editAdsStealth(String... args) {
-        String url = vkApi.getFinalURL().get("wall.editAdsStealth",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //editComment
-    public JsonHandler editComment(String... args) {
-        String url = vkApi.getFinalURL().get("wall.editComment",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //get
-    public JsonHandler get(String... args) {
-        String url = vkApi.getFinalURL().get("wall.get",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getById
-    public JsonHandler getById(String... args) {
-        String url = vkApi.getFinalURL().get("wall.getById",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getComments
-    public JsonHandler getComments(String... args) {
-        String url = vkApi.getFinalURL().get("wall.getComments",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getReposts
-    public JsonHandler getReposts(String... args) {
-        String url = vkApi.getFinalURL().get("wall.getReposts",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //openComments
-    public JsonHandler openComments(String... args) {
-        String url = vkApi.getFinalURL().get("wall.openComments",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //pin
-    public JsonHandler pin(String... args) {
-        String url = vkApi.getFinalURL().get("wall.pin",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //post
-    public JsonHandler post(String... args) {
-        String url = vkApi.getFinalURL().get("wall.post",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //postAdsStealth
-    public JsonHandler postAdsStealth(String... args) {
-        String url = vkApi.getFinalURL().get("wall.postAdsStealth",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //reportComment
-    public JsonHandler reportComment(String... args) {
-        String url = vkApi.getFinalURL().get("wall.reportComment",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //reportPost
-    public JsonHandler reportPost(String... args) {
-        String url = vkApi.getFinalURL().get("wall.reportPost",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //repost
-    public JsonHandler repost(String... args) {
-        String url = vkApi.getFinalURL().get("wall.repost",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //restore
-    public JsonHandler restore(String... args) {
-        String url = vkApi.getFinalURL().get("wall.restore",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //restoreComment
-    public JsonHandler restoreComment(String... args) {
-        String url = vkApi.getFinalURL().get("wall.restoreComment",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //search
-    public JsonHandler search(String... args) {
-        String url = vkApi.getFinalURL().get("wall.search",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //unpin
-    public JsonHandler unpin(String... args) {
-        String url = vkApi.getFinalURL().get("wall.unpin",
-                args);
-        return new JsonHandler(Request.get(url));
+        super(vkApi);
+        object = "wall";
     }
 }

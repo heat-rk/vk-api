@@ -1,10 +1,7 @@
 package com.github.heatalways.upload.objects;
 
-import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.upload.BodyOfRequest;
-import com.github.heatalways.upload.UploadObject;
-import com.github.heatalways.utils.ArrayToString;
+import com.github.heatalways.objects.docs.Docs;
+import com.github.heatalways.objects.wall.Wall;
 import com.github.heatalways.VkApi;
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.upload.BodyOfRequest;
@@ -41,8 +38,8 @@ public class DocumentToWall extends UploadObject {
      * @see DocumentToWall#upload(File)
      */
     public DocumentToWall upload(String group_id, File file) {
-        String upload_url = vkApi.docs.getWallUploadServer(
-                "group_id=" + group_id).get("upload_url").toString();
+        String upload_url = vkApi.docs.method(Docs.getWallUploadServer).params(
+                "group_id=" + group_id).execute().get("upload_url").toString();
         response = new JsonHandler(BodyOfRequest.document(upload_url, file));
         return this;
     }
@@ -53,10 +50,10 @@ public class DocumentToWall extends UploadObject {
      * @return объект класса DocumentToWall
      */
     public DocumentToWall save(String... args) {
-        response = vkApi.docs.save(
+        response = vkApi.docs.method(Docs.save).params(
                 "file=" + response.get("file"),
                 ArrayToString.toStr(args)
-        ).get(0);
+        ).execute().get(0);
         return this;
     }
 
@@ -66,10 +63,10 @@ public class DocumentToWall extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler post(String... args) {
-        return vkApi.wall.post(
+        return vkApi.wall.method(Wall.post).params(
                 "owner_id=" + response.get("owner_id"),
                 "attachments=doc" + response.get("owner_id") + "_" + response.get("id"),
                 ArrayToString.toStr(args)
-        );
+        ).execute();
     }
 }

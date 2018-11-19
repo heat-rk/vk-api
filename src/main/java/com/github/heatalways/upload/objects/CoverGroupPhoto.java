@@ -1,10 +1,6 @@
 package com.github.heatalways.upload.objects;
 
-import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.upload.BodyOfRequest;
-import com.github.heatalways.upload.UploadObject;
-import com.github.heatalways.utils.ArrayToString;
+import com.github.heatalways.objects.photos.Photos;
 import com.github.heatalways.VkApi;
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.upload.BodyOfRequest;
@@ -30,9 +26,9 @@ public class CoverGroupPhoto extends UploadObject {
      * @return объект класса CoverGroupPhoto
      */
     public CoverGroupPhoto upload(String group_id, File file, String... args) {
-        String upload_url = vkApi.photos.getOwnerCoverPhotoUploadServer(
+        String upload_url = vkApi.photos.method(Photos.getOwnerCoverPhotoUploadServer).params(
                 "group_id=" + group_id,
-                ArrayToString.toStr(args)).get("upload_url").toString();
+                ArrayToString.toStr(args)).execute().get("upload_url").toString();
         response = new JsonHandler(BodyOfRequest.coverGroupPhoto(upload_url, file));
         return this;
     }
@@ -42,9 +38,9 @@ public class CoverGroupPhoto extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler save() {
-        return vkApi.photos.saveOwnerCoverPhoto(
+        return vkApi.photos.method(Photos.saveOwnerCoverPhoto).params(
                 "hash=" + response.get("hash"),
                 "photo=" + response.get("photo")
-        );
+        ).execute();
     }
 }

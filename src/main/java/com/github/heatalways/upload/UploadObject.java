@@ -2,12 +2,15 @@ package com.github.heatalways.upload;
 
 import com.github.heatalways.VkApi;
 import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
 
+/**
+ * Родительский класс для загрузки какого-либо файла.
+ * @author heat"kazyxanovr1@gmail.com"
+ *
+ */
 public class UploadObject {
-    public final VkApi vkApi;
-    public JsonHandler response;
+    protected final VkApi vkApi;
+    protected JsonHandler response;
 
     public UploadObject(VkApi vkApi) {
         this.vkApi = vkApi;

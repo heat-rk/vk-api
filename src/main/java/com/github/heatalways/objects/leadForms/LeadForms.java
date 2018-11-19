@@ -1,8 +1,7 @@
 package com.github.heatalways.objects.leadForms;
 
-import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.VkApi;
-import com.github.heatalways.utils.Request;
+import com.github.heatalways.objects.MethodObject;
 
 /**
  * Класс для работы с методами объекта LeadForms.
@@ -10,64 +9,17 @@ import com.github.heatalways.utils.Request;
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-public class LeadForms {
+public class LeadForms extends MethodObject {
+    public final static String create = "create";
+    public final static String delete = "delete";
+    public final static String get = "get";
+    public final static String getLeads = "getLeads";
+    public final static String getUploadURL = "getUploadURL";
+    public final static String list = "list";
+    public final static String update = "update";
 
-    private final VkApi vkApi;
     public LeadForms(VkApi vkApi) {
-        this.vkApi = vkApi;
-    }
-
-    //create
-    public JsonHandler create(String... args) {
-        String url = vkApi.getFinalURL().get("leadForms.create",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //delete
-    public JsonHandler delete(String... args) {
-        String url = vkApi.getFinalURL().get("leadForms.delete",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //get
-    public JsonHandler get(String... args) {
-        String url = vkApi.getFinalURL().get("leadForms.get",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getLeads
-    public JsonHandler getLeads(String... args) {
-        String url = vkApi.getFinalURL().get("leadForms.getLeads",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getUploadURL
-    public JsonHandler getUploadURL() {
-        String url = vkApi.getFinalURL().get("leadForms.getUploadURL");
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //list
-    public JsonHandler list(String... args) {
-        String url = vkApi.getFinalURL().get("leadForms.list",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //update
-    public JsonHandler update(String... args) {
-        String url = vkApi.getFinalURL().get("leadForms.update",
-                args);
-        return new JsonHandler(Request.get(url));
+        super(vkApi);
+        object = "leadForms";
     }
 }

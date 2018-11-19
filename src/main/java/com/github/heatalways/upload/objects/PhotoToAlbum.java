@@ -1,10 +1,6 @@
 package com.github.heatalways.upload.objects;
 
-import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.upload.BodyOfRequest;
-import com.github.heatalways.upload.UploadObject;
-import com.github.heatalways.utils.ArrayToString;
+import com.github.heatalways.objects.photos.Photos;
 import com.github.heatalways.VkApi;
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.upload.BodyOfRequest;
@@ -50,9 +46,9 @@ public class PhotoToAlbum extends UploadObject {
         if (files.length > 5) {
             throw new ArrayIndexOutOfBoundsException("length of Array(files) is: " + files.length + ", max length is 5!");
         }
-        String upload_url = vkApi.photos.getUploadServer(
+        String upload_url = vkApi.photos.method(Photos.getUploadServer).params(
                 "group_id=" + group_id,
-                "album_id=" + album_id).get("upload_url").toString();
+                "album_id=" + album_id).execute().get("upload_url").toString();
         response = new JsonHandler(BodyOfRequest.photoToAlbum(upload_url, files));
         return this;
     }
@@ -63,7 +59,7 @@ public class PhotoToAlbum extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler save(String... args) {
-        return vkApi.photos.save(
+        return vkApi.photos.method(Photos.save).params(
                 "server=" + response.get("server"),
                 "photos_list=" + response.get("photos_list"),
                 "aid=" + response.get("aid"),
@@ -71,6 +67,6 @@ public class PhotoToAlbum extends UploadObject {
                 "group_id=" + group_id,
                 "album_id=" + album_id,
                 ArrayToString.toStr(args)
-        );
+        ).execute();
     }
 }

@@ -1,8 +1,9 @@
-package com.github.heatalways.longPollAPI;
+package com.github.heatalways.longPollAPI.UserLongPoll;
 
 import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.VkApi;
+import com.github.heatalways.longPollAPI.LongPollObject;
+import com.github.heatalways.objects.messages.Messages;
 import com.github.heatalways.utils.Request;
 
 /**
@@ -12,13 +13,8 @@ import com.github.heatalways.utils.Request;
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-public class UserLongPollApi {
-    private final String key;
-    private final String server;
-    private String ts;
-    private UserMessageHandler userMessageHandler;
+public class UserLongPollApi extends LongPollObject {
     private final int mode;
-    private final int wait;
     private final int version;
 
     /**
@@ -31,10 +27,10 @@ public class UserLongPollApi {
      * @param version версия
      */
     public UserLongPollApi(VkApi vkApi, int need_pts, String group_id, int wait, int mode, int version) {
-        JsonHandler response = vkApi.messages.getLongPollServer(
+        JsonHandler response = vkApi.messages.method(Messages.getLongPollServer).params(
                 "need_pts=" + need_pts,
                 "group_id=" + group_id,
-                "lp_version=" + version);
+                "lp_version=" + version).execute();
         this.key = response.get("key").toString();
         this.server = response.get("server").toString();
         this.ts = response.get("ts").toString();
@@ -42,26 +38,17 @@ public class UserLongPollApi {
         this.wait = wait;
         this.version = version;
     }
-    public UserLongPollApi setUserMessageHandler(UserMessageHandler userMessageHandler) {
-        this.userMessageHandler = userMessageHandler;
-        return this;
-    }
-    public void start() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    String url = "https://" + server +
-                            "?act=a_check&key=" + key +
-                            "&ts=" + ts +
-                            "&wait=" + wait +
-                            "&mode=" + mode +
-                            "&version=" + version;
-                    JsonHandler response = Request.getCallBackResponse(url);
-                    ts = response.get("ts").toString();
-                    userMessageHandler.onResponse(response.get("updates"));
-                }
-            }
-        }).start();
+
+    @Override
+    protected void bodyOfThread() {
+        String url = "https://" + server +
+                "?act=a_check&key=" + key +
+                "&ts=" + ts +
+                "&wait=" + wait +
+                "&mode=" + mode +
+                "&version=" + version;
+        JsonHandler response = Request.getCallBackResponse(url);
+        ts = response.get("ts").toString();
+        ((UserMessageHandler)messageHandlerObject).onResponse(response.get("updates"));
     }
 }

@@ -1,10 +1,6 @@
 package com.github.heatalways.upload.objects;
 
-import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.upload.BodyOfRequest;
-import com.github.heatalways.upload.UploadObject;
-import com.github.heatalways.utils.ArrayToString;
+import com.github.heatalways.objects.docs.Docs;
 import com.github.heatalways.VkApi;
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.upload.BodyOfRequest;
@@ -18,17 +14,17 @@ import java.io.File;
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-public class Document extends UploadObject {
-    public Document(VkApi vkApi) {
+public class DocumentUpload extends UploadObject {
+    public DocumentUpload(VkApi vkApi) {
         super(vkApi);
     }
     /**
      * Загрузка документа
      * @param file документ
-     * @return объект класса Document
-     * @see Document#upload(String, File)
+     * @return объект класса DocumentUpload
+     * @see DocumentUpload#upload(String, File)
      */
-    public Document upload(File file) {
+    public DocumentUpload upload(File file) {
         return upload("",file);
     }
 
@@ -36,12 +32,12 @@ public class Document extends UploadObject {
      * Загрузка документа в группу
      * @param group_id идентификатор группы
      * @param file документ
-     * @return объект класса Document
-     * @see Document#upload(File)
+     * @return объект класса DocumentUpload
+     * @see DocumentUpload#upload(File)
      */
-    public Document upload(String group_id, File file) {
-        String upload_url = vkApi.docs.getUploadServer(
-                "group_id=" + group_id).get("upload_url").toString();
+    public DocumentUpload upload(String group_id, File file) {
+        String upload_url = vkApi.docs.method(Docs.getUploadServer).params(
+                "group_id=" + group_id).execute().get("upload_url").toString();
         response = new JsonHandler(BodyOfRequest.document(upload_url, file));
         return this;
     }
@@ -52,9 +48,9 @@ public class Document extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler save(String... args) {
-        return vkApi.docs.save(
+        return vkApi.docs.method(Docs.save).params(
             "file=" + response.get("file"),
                 ArrayToString.toStr(args)
-        );
+        ).execute();
     }
 }

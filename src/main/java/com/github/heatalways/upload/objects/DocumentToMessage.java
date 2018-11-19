@@ -1,10 +1,7 @@
 package com.github.heatalways.upload.objects;
 
-import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.upload.BodyOfRequest;
-import com.github.heatalways.upload.UploadObject;
-import com.github.heatalways.utils.ArrayToString;
+import com.github.heatalways.objects.docs.Docs;
+import com.github.heatalways.objects.messages.Messages;
 import com.github.heatalways.VkApi;
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.upload.BodyOfRequest;
@@ -32,9 +29,9 @@ public class DocumentToMessage extends UploadObject {
      */
     public DocumentToMessage upload(String peer_id, File file) {
         this.peer_id = peer_id;
-        String upload_url = vkApi.docs.getMessagesUploadServer(
+        String upload_url = vkApi.docs.method(Docs.getMessagesUploadServer).params(
                 "type=doc",
-                "peer_id=" + peer_id).get("upload_url").toString();
+                "peer_id=" + peer_id).execute().get("upload_url").toString();
         response = new JsonHandler(BodyOfRequest.document(upload_url, file));
         return this;
     }
@@ -45,10 +42,10 @@ public class DocumentToMessage extends UploadObject {
      * @return объект класса DocumentToMessage
      */
     public DocumentToMessage save(String... args) {
-        response = vkApi.docs.save(
+        response = vkApi.docs.method(Docs.save).params(
                 "file=" + response.get("file"),
                 ArrayToString.toStr(args)
-        ).get(0);
+        ).execute().get(0);
         return this;
     }
 
@@ -58,10 +55,10 @@ public class DocumentToMessage extends UploadObject {
      * @return объект класса JsonHandler
      */
     public JsonHandler send(String... args) {
-        return vkApi.messages.send(
+        return vkApi.messages.method(Messages.send).params(
             "peer_id=" + peer_id,
                 "attachment=doc" + response.get("owner_id") + "_" + response.get("id"),
                 ArrayToString.toStr(args)
-        );
+        ).execute();
     }
 }

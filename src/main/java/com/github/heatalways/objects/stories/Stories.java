@@ -1,8 +1,7 @@
 package com.github.heatalways.objects.stories;
 
-import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.VkApi;
-import com.github.heatalways.utils.Request;
+import com.github.heatalways.objects.MethodObject;
 
 /**
  * Класс для работы с методами объекта Stories.
@@ -10,113 +9,23 @@ import com.github.heatalways.utils.Request;
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-public class Stories {
+public class Stories extends MethodObject {
+    public final static String banOwner = "banOwner";
+    public final static String delete = "delete";
+    public final static String get = "get";
+    public final static String getBanned = "getBanned";
+    public final static String getById = "getById";
+    public final static String getPhotoUploadServer = "getPhotoUploadServer";
+    public final static String getReplies = "getReplies";
+    public final static String getStats = "getStats";
+    public final static String getVideoUploadServer = "getVideoUploadServer";
+    public final static String getViewers = "getViewers";
+    public final static String hideAllReplies = "hideAllReplies";
+    public final static String hideReply = "hideReply";
+    public final static String unbanOwner = "unbanOwner";
 
-    private final VkApi vkApi;
     public Stories(VkApi vkApi) {
-        this.vkApi = vkApi;
-    }
-
-    //banOwner
-    public JsonHandler banOwner(String... args) {
-        String url = vkApi.getFinalURL().get("stories.banOwner",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //delete
-    public JsonHandler delete(String... args) {
-        String url = vkApi.getFinalURL().get("stories.delete",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //get
-    public JsonHandler get(String... args) {
-        String url = vkApi.getFinalURL().get("stories.get",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getBanned
-    public JsonHandler getBanned(String... args) {
-        String url = vkApi.getFinalURL().get("stories.getBanned",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getById
-    public JsonHandler getById(String... args) {
-        String url = vkApi.getFinalURL().get("stories.getById",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getPhotoUploadServer
-    public JsonHandler getPhotoUploadServer(String... args) {
-        String url = vkApi.getFinalURL().get("stories.getPhotoUploadServer",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getReplies
-    public JsonHandler getReplies(String... args) {
-        String url = vkApi.getFinalURL().get("stories.getReplies",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getStats
-    public JsonHandler getStats(String... args) {
-        String url = vkApi.getFinalURL().get("stories.getStats",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getVideoUploadServer
-    public JsonHandler getVideoUploadServer(String... args) {
-        String url = vkApi.getFinalURL().get("stories.getVideoUploadServer",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getViewers
-    public JsonHandler getViewers(String... args) {
-        String url = vkApi.getFinalURL().get("stories.getViewers",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //hideAllReplies
-    public JsonHandler hideAllReplies(String... args) {
-        String url = vkApi.getFinalURL().get("stories.hideAllReplies",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //hideReply
-    public JsonHandler hideReply(String... args) {
-        String url = vkApi.getFinalURL().get("stories.hideReply",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //unbanOwner
-    public JsonHandler unbanOwner(String... args) {
-        String url = vkApi.getFinalURL().get("stories.unbanOwner",
-                args);
-        return new JsonHandler(Request.get(url));
+        super(vkApi);
+        object = "stories";
     }
 }

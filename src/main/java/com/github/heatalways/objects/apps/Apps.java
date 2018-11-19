@@ -1,11 +1,7 @@
 package com.github.heatalways.objects.apps;
 
+import com.github.heatalways.objects.MethodObject;
 import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.utils.Request;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.VkApi;
-import com.github.heatalways.utils.Request;
 
 /**
  * Класс для работы с методами объекта Apps.
@@ -13,73 +9,17 @@ import com.github.heatalways.utils.Request;
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-public class Apps {
+public class Apps extends MethodObject {
+    public final static String deleteAppRequests = "deleteAppRequests";
+    public final static String get = "get";
+    public final static String getFriendsList = "getFriendsList";
+    public final static String getLeaderboard = "getLeaderboard";
+    public final static String getScopes = "getScopes";
+    public final static String getScore = "getScore";
+    public final static String sendRequest = "sendRequest";
 
-    private final VkApi vkApi;
     public Apps(VkApi vkApi) {
-        this.vkApi = vkApi;
-    }
-
-    //deleteAppRequests
-    public JsonHandler deleteAppRequests() {
-        String url = vkApi.getFinalURL().get("apps.deleteAppRequests",
-                "");
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //get
-    public JsonHandler get(String... args) {
-        String url = vkApi.getFinalURL().get("apps.get",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getCatalog
-    public JsonHandler getCatalog(String... args) {
-        String url = vkApi.getFinalURL().get("apps.getCatalog",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getFriendsList
-    public JsonHandler getFriendsList(String... args) {
-        String url = vkApi.getFinalURL().get("apps.getFriendsList",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getLeaderboard
-    public JsonHandler getLeaderboard(String... args) {
-        String url = vkApi.getFinalURL().get("apps.getLeaderboard",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getScopes
-    public JsonHandler getScopes() {
-        String url = vkApi.getFinalURL().get("apps.getScopes",
-                "");
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getScore
-    public JsonHandler getScore(String... args) {
-        String url = vkApi.getFinalURL().get("apps.getScore",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //sendRequest
-    public JsonHandler sendRequest(String... args) {
-        String url = vkApi.getFinalURL().get("apps.sendRequest",
-                args);
-        return new JsonHandler(Request.get(url));
+        super(vkApi);
+        object = "apps";
     }
 }

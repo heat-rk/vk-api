@@ -1,10 +1,7 @@
 package com.github.heatalways.upload.objects;
 
-import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.upload.BodyOfRequest;
-import com.github.heatalways.upload.UploadObject;
-import com.github.heatalways.utils.ArrayToString;
+import com.github.heatalways.objects.market.Market;
+import com.github.heatalways.objects.photos.Photos;
 import com.github.heatalways.VkApi;
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.upload.BodyOfRequest;
@@ -36,10 +33,10 @@ public class ProductPhoto extends UploadObject {
     public ProductPhoto upload(String group_id, int main_photo, File file, String... args) {
         this.main_photo = main_photo;
         this.group_id = group_id;
-        String upload_url = vkApi.photos.getMarketUploadServer(
+        String upload_url = vkApi.photos.method(Photos.getMarketUploadServer).params(
                 "group_id=" + group_id,
                 "main_photo=" + main_photo,
-                ArrayToString.toStr(args)).get("upload_url").toString();
+                ArrayToString.toStr(args)).execute().get("upload_url").toString();
         response = new JsonHandler(BodyOfRequest.productPhoto(upload_url, file));
         return this;
     }
@@ -50,21 +47,21 @@ public class ProductPhoto extends UploadObject {
      */
     public ProductPhoto save() {
         if (main_photo == 1) {
-            response = vkApi.photos.saveMarketPhoto(
+            response = vkApi.photos.method(Photos.saveMarketPhoto).params(
                 "server=" + response.get("server"),
                     "photo=" + response.get("photo"),
                     "hash=" + response.get("hash"),
                     "crop_data=" + response.get("crop_data"),
                     "crop_hash=" + response.get("crop_hash"),
                     "group_id=" + group_id
-            ).get(0);
+            ).execute().get(0);
         } else {
-            response = vkApi.photos.saveMarketPhoto(
+            response = vkApi.photos.method(Photos.saveMarketPhoto).params(
                     "server=" + response.get("server"),
                     "photo=" + response.get("photo"),
                     "hash=" + response.get("hash"),
                     "group_id=" + group_id
-            ).get(0);
+            ).execute().get(0);
         }
         return this;
     }
@@ -76,17 +73,17 @@ public class ProductPhoto extends UploadObject {
      */
     public JsonHandler marketAdd(String... args) {
         if (main_photo == 1) {
-            return vkApi.market.add(
+            return vkApi.market.method(Market.add).params(
                     "main_photo_id=" + response.get("id"),
                     "owner_id=-" + group_id,
                     ArrayToString.toStr(args)
-            );
+            ).execute();
         } else {
-            return vkApi.market.add(
+            return vkApi.market.method(Market.add).params(
                     "photo_ids=" + response.get("id"),
                     "owner_id=-" + group_id,
                     ArrayToString.toStr(args)
-            );
+            ).execute();
         }
     }
 
@@ -97,17 +94,17 @@ public class ProductPhoto extends UploadObject {
      */
     public JsonHandler marketEdit(String... args) {
         if (main_photo == 1) {
-            return vkApi.market.edit(
+            return vkApi.market.method(Market.edit).params(
                     "main_photo_id=" + response.get("id"),
                     "owner_id=-" + group_id,
                     ArrayToString.toStr(args)
-            );
+            ).execute();
         } else {
-            return vkApi.market.edit(
+            return vkApi.market.method(Market.edit).params(
                     "photo_ids=" + response.get("id"),
                     "owner_id=-" + group_id,
                     ArrayToString.toStr(args)
-            );
+            ).execute();
         }
     }
 }

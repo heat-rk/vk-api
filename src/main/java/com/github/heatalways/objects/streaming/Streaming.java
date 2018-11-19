@@ -1,8 +1,7 @@
 package com.github.heatalways.objects.streaming;
 
-import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.VkApi;
-import com.github.heatalways.utils.Request;
+import com.github.heatalways.objects.MethodObject;
 
 /**
  * Класс для работы с методами объекта Streaming.
@@ -10,47 +9,15 @@ import com.github.heatalways.utils.Request;
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-public class Streaming {
+public class Streaming extends MethodObject {
+    public final static String getServerUrl = "getServerUrl";
+    public final static String getSettings = "getSettings";
+    public final static String getStats = "getStats";
+    public final static String getStem = "getStem";
+    public final static String setSettings = "setSettings";
 
-    private final VkApi vkApi;
     public Streaming(VkApi vkApi) {
-        this.vkApi = vkApi;
-    }
-
-    //getServerUrl
-    public JsonHandler getServerUrl() {
-        String url = vkApi.getFinalURL().get("streaming.getServerUrl");
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getSettings
-    public JsonHandler getSettings() {
-        String url = vkApi.getFinalURL().get("streaming.getSettings");
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getStats
-    public JsonHandler getStats(String... args) {
-        String url = vkApi.getFinalURL().get("streaming.getStats",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //getStem
-    public JsonHandler getStem(String... args) {
-        String url = vkApi.getFinalURL().get("streaming.getStem",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //setSettings
-    public JsonHandler setSettings(String... args) {
-        String url = vkApi.getFinalURL().get("streaming.setSettings",
-                args);
-        return new JsonHandler(Request.get(url));
+        super(vkApi);
+        object = "streaming";
     }
 }

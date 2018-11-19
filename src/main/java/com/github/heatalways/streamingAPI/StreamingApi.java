@@ -1,8 +1,8 @@
 package com.github.heatalways.streamingAPI;
 
 import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.VkApi;
+import com.github.heatalways.objects.streaming.Streaming;
 
 /**
  * Класс для работы с StreamingApi.
@@ -23,7 +23,7 @@ public class StreamingApi {
      * @param vkApi объект основного класса VkApi
      */
     public StreamingApi(VkApi vkApi) {
-        JsonHandler response = vkApi.streaming.getServerUrl();
+        JsonHandler response = vkApi.streaming.method(Streaming.getServerUrl).execute();
         endpoint = response.get("endpoint").toString();
         key = response.get("key").toString();
         rules = new Rules(this);

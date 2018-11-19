@@ -1,8 +1,7 @@
 package com.github.heatalways.objects.status;
 
-import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.VkApi;
-import com.github.heatalways.utils.Request;
+import com.github.heatalways.objects.MethodObject;
 
 /**
  * Класс для работы с методами объекта Status.
@@ -10,25 +9,12 @@ import com.github.heatalways.utils.Request;
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-public class Status {
+public class Status extends MethodObject {
+    public final static String get = "get";
+    public final static String set = "set";
 
-    private final VkApi vkApi;
     public Status(VkApi vkApi) {
-        this.vkApi = vkApi;
-    }
-
-    //get
-    public JsonHandler get(String... args) {
-        String url = vkApi.getFinalURL().get("status.get",
-                args);
-        return new JsonHandler(Request.get(url));
-    }
-
-
-    //set
-    public JsonHandler set(String... args) {
-        String url = vkApi.getFinalURL().get("status.set",
-                args);
-        return new JsonHandler(Request.get(url));
+        super(vkApi);
+        object = "status";
     }
 }

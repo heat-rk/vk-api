@@ -1,10 +1,7 @@
 package com.github.heatalways.upload.objects;
 
-import com.github.heatalways.VkApi;
-import com.github.heatalways.jsonHandler.JsonHandler;
-import com.github.heatalways.upload.BodyOfRequest;
-import com.github.heatalways.upload.UploadObject;
-import com.github.heatalways.utils.ArrayToString;
+import com.github.heatalways.objects.messages.Messages;
+import com.github.heatalways.objects.photos.Photos;
 import com.github.heatalways.VkApi;
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.upload.BodyOfRequest;
@@ -32,7 +29,8 @@ public class PhotoToMessage extends UploadObject {
      */
     public PhotoToMessage upload(String peer_id, File file) {
         this.peer_id = peer_id;
-        String upload_url = vkApi.photos.getMessagesUploadServer("peer_id=" + peer_id).get("upload_url").toString();
+        String upload_url = vkApi.photos.method(Photos.getMessagesUploadServer).params(
+                "peer_id=" + peer_id).execute().get("upload_url").toString();
         response = new JsonHandler(BodyOfRequest.photoToMessage(upload_url, file));
         return this;
     }
@@ -42,18 +40,18 @@ public class PhotoToMessage extends UploadObject {
      * @return объект класса PhotoToMessage
      */
     public PhotoToMessage save() {
-        response = vkApi.photos.saveMessagesPhoto(
+        response = vkApi.photos.method(Photos.saveMessagesPhoto).params(
                 "photo=" + response.get("photo"),
                 "server=" + response.get("server"),
                 "hash=" + response.get("hash")
-        ).get(0);
+        ).execute().get(0);
         return this;
     }
     public JsonHandler post(String... args) {
-        return vkApi.messages.send(
+        return vkApi.messages.method(Messages.send).params(
             "attachment=photo" + response.get("owner_id") + "_" + response.get("id"),
                 "peer_id=" + peer_id,
                 ArrayToString.toStr(args)
-        );
+        ).execute();
     }
 }
