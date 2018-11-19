@@ -79,7 +79,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/VkApi.html
 ```
 * OBJECT - префикс метода (account, users, friends...)
 * OBJECT_CLASS - класс объекта
-* METHOD_NAME - имя метод
+* METHOD_NAME - имя метода
 * PARAMS - параметры типа String: "param1=value1","param2=value2"
 
 Пример
@@ -106,7 +106,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/jsonHandler/JsonHandler.html
 Пример 2
 ```java
         JsonHandler users = vkApi.users.method(Users.get)
-        .params("user_ids=1,2,3","fields=connection,sex").execute();
+        .params("user_ids=1,2,3","fields=connections,sex").execute();
         for (JsonHandler user : users.toArray()) {
             System.out.println(user.get("first_name"));
         }
