@@ -4,4 +4,4 @@ target/
 .idea
 *.iml
 *.asc
-sdk/**/Main.java
+src/**/Main.java
