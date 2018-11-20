@@ -1,32 +1,25 @@
 package com.github.heatalways.utils;
 
 import com.github.heatalways.jsonHandler.JsonHandler;
+import com.github.heatalways.utils.http.HttpGet;
 
 import java.io.IOException;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.Scanner;
 
 /**
- * Класс для получение тела GET запроса.
+ * Класс для обработки тела GET запроса к VK API.
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
 public class Request {
     private final FinalURL finalURL = new FinalURL();
-    private static String getJsonString(String url) throws IOException {
-        URLConnection urlConnection = new URL(url).openConnection();
-        Scanner scanner = new Scanner(urlConnection.getInputStream());
-        return scanner.nextLine();
-    }
     public String getServiceKey(String id, String sec) throws IOException {
         String url = finalURL.getTokenUrl(id, sec);
-        JsonHandler r = new JsonHandler(getJsonString(url));
+        JsonHandler r = new JsonHandler(HttpGet.get(url));
         return r.get("access_token").toString();
     }
     public String getServiceKey(String id, String sec, String redirect_uri, String code, String group_id) throws IOException {
         String url = finalURL.getTokenUrl(id, sec, redirect_uri, code);
-        JsonHandler r = new JsonHandler(getJsonString(url));
+        JsonHandler r = new JsonHandler(HttpGet.get(url));
         if (group_id == null) {
             return r.get("access_token").toString();
         } else {
@@ -35,7 +28,7 @@ public class Request {
     }
     public static Object get(String url) {
         try {
-            JsonHandler r = new JsonHandler(getJsonString(url));
+            JsonHandler r = new JsonHandler(HttpGet.get(url));
             Object response = r.get("response").getObject();
             if (response != null) {
                 return response;
@@ -49,7 +42,7 @@ public class Request {
     }
     public static JsonHandler getCallBackResponse(String url) {
         try {
-            return new JsonHandler(getJsonString(url));
+            return new JsonHandler(HttpGet.get(url));
         } catch (IOException e) {
             e.printStackTrace();
             return null;

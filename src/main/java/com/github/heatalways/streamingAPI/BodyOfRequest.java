@@ -1,8 +1,8 @@
 package com.github.heatalways.streamingAPI;
 
 import org.apache.http.entity.StringEntity;
-import com.github.heatalways.utils.HttpDelete;
-import com.github.heatalways.utils.HttpPost;
+import com.github.heatalways.utils.http.HttpDelete;
+import com.github.heatalways.utils.http.HttpPost;
 
 import java.io.UnsupportedEncodingException;
 
