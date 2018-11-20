@@ -44,4 +44,5 @@ com.github.heatalways.streamingAPI
 com.github.heatalways.upload
 com.github.heatalways.upload.objects
 com.github.heatalways.utils
+com.github.heatalways.utils.http
 com.github.heatalways.vkAuth
