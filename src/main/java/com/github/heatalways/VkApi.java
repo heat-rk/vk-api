@@ -44,14 +44,12 @@ import java.io.IOException;
 /**
  * Основной класс для работы с VkApi
  * @author heat"kazyxanovr1@gmail.com"
- *
  */
 public class VkApi {
     private String secret;
     private String access_token;
     private final String lang = "ru";
-
-    public static final String v = "5.87";
+    public static final String v = "5.101";
 
     private final FinalURL finalURL;
 
