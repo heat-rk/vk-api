@@ -62,6 +62,10 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/vkAuth/VkAuth.html
 ```java
         VkAuth vkAuth = new VkAuth().setAccessToken(ACCESS_TOKEN).setClientSecret(CLIENT_SECRET);
 ```
+Если вам нужно изменить версию API (5.101 по умолчанию), то следует вызвать метод "setVerison(<версия>)"
+```java
+        VkAuth vkAuth = new VkAuth().setAccessToken(ACCESS_TOKEN).setVerison("5.101");
+```
 Подробнее об авторизации вы можете узнать в [официальной документации](https://vk.com/dev/access_token).
 
 ## Создание объекта VkApi

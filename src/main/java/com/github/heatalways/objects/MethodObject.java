@@ -12,9 +12,9 @@ import com.github.heatalways.utils.Request;
 public class MethodObject {
     private String method;
     private String[] params;
-    protected VkApi vkApi;
+    private final VkApi vkApi;
     protected String object;
-    public MethodObject(VkApi vkApi) {
+    protected MethodObject(VkApi vkApi) {
         this.vkApi = vkApi;
     }
 

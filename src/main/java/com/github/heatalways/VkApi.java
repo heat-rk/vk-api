@@ -48,8 +48,8 @@ import java.io.IOException;
 public class VkApi {
     private String secret;
     private String access_token;
-    private final String lang = "ru";
-    public static final String v = "5.101";
+    private final String language = "ru";
+    private String version;
 
     private final FinalURL finalURL;
 
@@ -99,6 +99,7 @@ public class VkApi {
     public VkApi(VkAuth auth) throws IOException {
         try {
             finalURL = new FinalURL(this);
+            version = auth.getVersion();
             auth.authorize();
             this.access_token = auth.getAccessToken();
             this.secret = auth.getClientSecret();
@@ -109,8 +110,8 @@ public class VkApi {
 
     public String getBaseUrl() {
         String url = "https://api.vk.com/method/!METHOD_NAME?!PARAMETERS&access_token=" + access_token +
-                "&client_secret=!SECRET&v=" + v +
-                "&lang=" + lang;
+                "&client_secret=!SECRET&v=" + version +
+                "&language=" + language;
         if (secret != null) {
             url = url.replace("!SECRET", secret);
         } else {
@@ -122,6 +123,9 @@ public class VkApi {
         return finalURL;
     }
     public String getLanguage() {
-        return lang;
+        return language;
+    }
+    public String getVersion() {
+        return version;
     }
 }

@@ -17,6 +17,7 @@ public class VkAuth {
     private String client_secret;
     private String redirect_uri;
     private String code;
+    private String version = "5.101";
     private int authorizationType = 0;
 
     /**
@@ -78,6 +79,22 @@ public class VkAuth {
         return this;
     }
 
+    /**
+     * Устанавливает версию API, которую Вы намеренны использовать. Версия по умолчанию: 5.101
+     * @param version версия API
+     */
+    public VkAuth setVersion(String version) {
+        this.version = version;
+        return this;
+    }
+
+    /**
+     * Получении версии API. Версия по умолчанию: 5.101
+     * @return версия API
+     */
+    public String getVersion() {
+        return version;
+    }
     /**
      * Авторизация с помощью специального ключа доступа
      * @param access_token ключ доступа
