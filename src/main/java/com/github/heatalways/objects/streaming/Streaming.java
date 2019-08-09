@@ -1,6 +1,6 @@
 package com.github.heatalways.objects.streaming;
 
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 import com.github.heatalways.objects.MethodObject;
 
 /**
@@ -16,8 +16,8 @@ public class Streaming extends MethodObject {
     public final static String getStem = "getStem";
     public final static String setSettings = "setSettings";
 
-    public Streaming(VkApi vkApi) {
-        super(vkApi);
+    public Streaming(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "streaming";
     }
 }

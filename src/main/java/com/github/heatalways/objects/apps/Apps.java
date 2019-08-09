@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.apps;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Apps.
@@ -18,8 +18,8 @@ public class Apps extends MethodObject {
     public final static String getScore = "getScore";
     public final static String sendRequest = "sendRequest";
 
-    public Apps(VkApi vkApi) {
-        super(vkApi);
+    public Apps(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "apps";
     }
 }

@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.pages;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Pages.
@@ -19,8 +19,8 @@ public class Pages extends MethodObject {
     public final static String save = "save";
     public final static String saveAccess = "saveAccess";
 
-    public Pages(VkApi vkApi) {
-        super(vkApi);
+    public Pages(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "pages";
     }
 }

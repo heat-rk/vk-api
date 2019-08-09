@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.polls;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Polls.
@@ -20,8 +20,8 @@ public class Polls extends MethodObject {
     public final static String getVoters = "getVoters";
     public final static String savePhoto = "savePhoto";
 
-    public Polls(VkApi vkApi) {
-        super(vkApi);
+    public Polls(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "polls";
     }
 }

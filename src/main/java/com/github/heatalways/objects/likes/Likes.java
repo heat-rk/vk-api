@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.likes;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 
 /**
@@ -16,8 +16,8 @@ public class Likes extends MethodObject {
     public final static String getList = "getList";
     public final static String isLiked = "isLiked";
 
-    public Likes(VkApi vkApi) {
-        super(vkApi);
+    public Likes(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "likes";
     }
 }

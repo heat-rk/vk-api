@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.utils;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Utils.
@@ -18,8 +18,8 @@ public class Utils extends MethodObject {
     public final static String getShortLink = "getShortLink";
     public final static String resolveScreenName = "resolveScreenName";
 
-    public Utils(VkApi vkApi) {
-        super(vkApi);
+    public Utils(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "utils";
     }
 }

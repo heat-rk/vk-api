@@ -15,7 +15,6 @@ import java.io.*;
  *
  */
 public class BodyOfRequest {
-    //upload
     public static String photoToWall(String url, File file) {
         FileBody bin = new FileBody(file);
         HttpEntity reqEntity = MultipartEntityBuilder.create()
@@ -23,9 +22,6 @@ public class BodyOfRequest {
                 .build();
         return HttpPost.getResult(url, reqEntity);
     }
-
-
-    //upload
     public static String photoToAlbum(String url, File[] files) {
         MultipartEntityBuilder multipartEntityBuilder = MultipartEntityBuilder.create();
         for (int i = 0; i < files.length; i++) {
@@ -35,9 +31,6 @@ public class BodyOfRequest {
         HttpEntity reqEntity = multipartEntityBuilder.build();
         return HttpPost.getResult(url, reqEntity);
     }
-
-
-    //upload
     public static String mainPhoto(String url, File file) {
         return mainPhoto(url, file, "");
     }
@@ -49,9 +42,6 @@ public class BodyOfRequest {
                 .build();
         return HttpPost.getResult(url, reqEntity);
     }
-
-
-    //upload
     public static String photoToMessage(String url, File file) {
         FileBody bin = new FileBody(file);
         HttpEntity reqEntity = MultipartEntityBuilder.create()
@@ -59,9 +49,6 @@ public class BodyOfRequest {
                 .build();
         return HttpPost.getResult(url, reqEntity);
     }
-
-
-    //upload
     public static String chatPhoto(String url, File file) {
         FileBody bin = new FileBody(file);
         HttpEntity reqEntity = MultipartEntityBuilder.create()
@@ -69,9 +56,6 @@ public class BodyOfRequest {
                 .build();
         return HttpPost.getResult(url, reqEntity);
     }
-
-
-    //ProductPhoto
     public static String productPhoto(String url, File file) {
         FileBody bin = new FileBody(file);
         HttpEntity reqEntity = MultipartEntityBuilder.create()
@@ -79,9 +63,6 @@ public class BodyOfRequest {
                 .build();
         return HttpPost.getResult(url, reqEntity);
     }
-
-
-    //upload
     public static String getMarketAlbumPhoto(String url, File file) {
         FileBody bin = new FileBody(file);
         HttpEntity reqEntity = MultipartEntityBuilder.create()
@@ -89,9 +70,13 @@ public class BodyOfRequest {
                 .build();
         return HttpPost.getResult(url, reqEntity);
     }
-
-
-    //upload
+    public static String audio(String url, File file) {
+        FileBody bin = new FileBody(file);
+        HttpEntity reqEntity = MultipartEntityBuilder.create()
+                .addPart("file", bin)
+                .build();
+        return HttpPost.getResult(url, reqEntity);
+    }
     public static String video(String url, File file) {
         FileBody bin = new FileBody(file);
         HttpEntity reqEntity = MultipartEntityBuilder.create()

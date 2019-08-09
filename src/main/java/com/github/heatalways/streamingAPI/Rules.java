@@ -15,11 +15,11 @@ public class Rules {
 
     /**
      * Создает объект класса Rules
-     * @param streamingApi объект класса StreamingApi
+     * @param streamingApiInterface объект класса StreamingApiInterface
      * @see StreamingApi
      */
-    public Rules(StreamingApi streamingApi) {
-        url = "https://" + streamingApi.getEndpoint() + "/rules?key=" + streamingApi.getKey();
+    public Rules(StreamingApiInterface streamingApiInterface) {
+        url = "https://" + streamingApiInterface.getEndpoint() + "/rules?key=" + streamingApiInterface.getKey();
     }
 
     /**
@@ -34,7 +34,7 @@ public class Rules {
      * Добавляет новое правило
      * @param value строковое представление правила
      * @param tag метка правила
-     * @return объект класса JsonHandler(ответ от сервера)
+     * @return ответ от сервера в формате JSON
      */
     public JsonHandler add(String value, String tag) {
         String json = "{\"rule\":{\"value\":\"" + value + "\",\"tag\":\"" + tag + "\"}}";
@@ -44,7 +44,7 @@ public class Rules {
     /**
      * Удаляет правило по метке
      * @param tag метка правила
-     * @return объект класса JsonHandler(ответ от сервера)
+     * @return ответ от сервера в формате JSON
      */
     public JsonHandler delete(String tag) {
         String json = "{\"tag\":\"" + tag + "\"}";

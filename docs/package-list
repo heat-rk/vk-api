@@ -1,13 +1,14 @@
 com.github.heatalways
 com.github.heatalways.jsonHandler
 com.github.heatalways.longPollAPI
-com.github.heatalways.longPollAPI.BotsLongPoll
-com.github.heatalways.longPollAPI.UserLongPoll
+com.github.heatalways.longPollAPI.botsLongPoll
+com.github.heatalways.longPollAPI.userLongPoll
 com.github.heatalways.objects
 com.github.heatalways.objects.account
 com.github.heatalways.objects.ads
 com.github.heatalways.objects.appWidgets
 com.github.heatalways.objects.apps
+com.github.heatalways.objects.audio
 com.github.heatalways.objects.board
 com.github.heatalways.objects.database
 com.github.heatalways.objects.docs

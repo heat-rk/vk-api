@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.fave;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Fave.
@@ -23,8 +23,8 @@ public class Fave extends MethodObject {
     public final static String removeLink = "removeLink";
     public final static String removeUser = "removeUser";
 
-    public Fave(VkApi vkApi) {
-        super(vkApi);
+    public Fave(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "fave";
     }
 }

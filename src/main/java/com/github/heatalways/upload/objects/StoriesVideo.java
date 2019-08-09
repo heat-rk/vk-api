@@ -11,9 +11,12 @@ import java.io.File;
 /**
  * Класс для загрузки видео в историю.
  * @author heat"kazyxanovr1@gmail.com"
- *
  */
 public class StoriesVideo extends UploadObject {
+    /**
+     * Конструктор, принимающий в качестве параметра объект класса VkApi
+     * @param vkApi объект класса VkApi
+     */
     public StoriesVideo(VkApi vkApi) {
         super(vkApi);
     }

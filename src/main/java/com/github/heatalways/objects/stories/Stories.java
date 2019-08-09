@@ -1,6 +1,6 @@
 package com.github.heatalways.objects.stories;
 
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 import com.github.heatalways.objects.MethodObject;
 
 /**
@@ -24,8 +24,8 @@ public class Stories extends MethodObject {
     public final static String hideReply = "hideReply";
     public final static String unbanOwner = "unbanOwner";
 
-    public Stories(VkApi vkApi) {
-        super(vkApi);
+    public Stories(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "stories";
     }
 }

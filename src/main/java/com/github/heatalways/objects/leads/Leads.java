@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.leads;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Leads.
@@ -17,8 +17,8 @@ public class Leads extends MethodObject {
     public final static String metricHit = "metricHit";
     public final static String start = "start";
 
-    public Leads(VkApi vkApi) {
-        super(vkApi);
+    public Leads(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "leads";
     }
 }

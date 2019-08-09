@@ -11,7 +11,7 @@ import com.github.heatalways.objects.streaming.Streaming;
  * @author heat"kazyxanovr1@gmail.com"
  *
  */
-public class StreamingApi {
+public class StreamingApi implements StreamingApiInterface {
     private final String endpoint;
     private final String key;
 
@@ -30,9 +30,20 @@ public class StreamingApi {
         stream = new Stream(this);
     }
 
+    /**
+     * Возвращает хост для подключения к серверу
+     * @return хост для подключения к серверу
+     */
+    @Override
     public String getEndpoint() {
         return endpoint;
     }
+
+    /**
+     * Возвращает ключ доступа. Ключ бессрочный и прекращает действовать только после получения нового ключа
+     * @return ключ доступа. Ключ бессрочный и прекращает действовать только после получения нового ключа
+     */
+    @Override
     public String getKey() {
         return key;
     }

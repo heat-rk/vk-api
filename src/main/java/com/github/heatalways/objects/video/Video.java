@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.video;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта VideoUpload.
@@ -38,8 +38,8 @@ public class Video extends MethodObject {
     public final static String save = "save";
     public final static String search = "search";
 
-    public Video(VkApi vkApi) {
-        super(vkApi);
+    public Video(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "video";
     }
 }

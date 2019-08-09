@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.groups;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Groups.
@@ -53,8 +53,8 @@ public class Groups extends MethodObject {
     public final static String setLongPollSettings = "setLongPollSettings";
     public final static String unban = "unban";
 
-    public Groups(VkApi vkApi) {
-        super(vkApi);
+    public Groups(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "groups";
     }
 }

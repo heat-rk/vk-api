@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.market;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Market.
@@ -35,8 +35,8 @@ public class Market extends MethodObject {
     public final static String restoreComment = "restoreComment";
     public final static String search = "search";
 
-    public Market(VkApi vkApi) {
-        super(vkApi);
+    public Market(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "market";
     }
 }

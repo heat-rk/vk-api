@@ -20,11 +20,11 @@ public class Stream {
 
     /**
      * Создает объект класса Stream
-     * @param streamingApi объект класса StreamingApi
+     * @param streamingApiInterface объект класса StreamingApiInterface
      * @see StreamingApi
      */
-    public Stream(StreamingApi streamingApi) {
-        String url = "wss://" + streamingApi.getEndpoint() + "/stream?key=" + streamingApi.getKey();
+    public Stream(StreamingApiInterface streamingApiInterface) {
+        String url = "wss://" + streamingApiInterface.getEndpoint() + "/stream?key=" + streamingApiInterface.getKey();
         try {
             webSocket = new WebSocket(new URI(url), new Draft_6455()) {
                 @Override

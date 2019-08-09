@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.ads;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Ads.
@@ -56,8 +56,8 @@ public class Ads extends MethodObject {
     public final static String updateTargetPixel = "updateTargetPixel";
 
 
-    public Ads(VkApi vkApi) {
-        super(vkApi);
+    public Ads(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "ads";
     }
 }

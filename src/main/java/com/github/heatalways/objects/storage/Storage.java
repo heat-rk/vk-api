@@ -1,6 +1,6 @@
 package com.github.heatalways.objects.storage;
 
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 import com.github.heatalways.objects.MethodObject;
 
 /**
@@ -14,8 +14,8 @@ public class Storage extends MethodObject {
     public final static String set = "set";
     public final static String getKeys = "getKeys";
 
-    public Storage(VkApi vkApi) {
-        super(vkApi);
+    public Storage(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "storage";
     }
 }

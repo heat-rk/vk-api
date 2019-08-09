@@ -13,10 +13,14 @@ import java.io.File;
 /**
  * Класс для загрузки документов в сообщение.
  * @author heat"kazyxanovr1@gmail.com"
- *
  */
 public class DocumentToMessage extends UploadObject {
     private String peer_id;
+
+    /**
+     * Конструктор, принимающий в качестве параметра объект класса VkApi
+     * @param vkApi объект класса VkApi
+     */
     public DocumentToMessage(VkApi vkApi) {
         super(vkApi);
     }

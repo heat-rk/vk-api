@@ -13,11 +13,15 @@ import java.io.File;
 /**
  * Класс для загрузки фото товара.
  * @author heat"kazyxanovr1@gmail.com"
- *
  */
 public class ProductPhoto extends UploadObject {
     private int main_photo;
     private String group_id;
+
+    /**
+     * Конструктор, принимающий в качестве параметра объект класса VkApi
+     * @param vkApi объект класса VkApi
+     */
     public ProductPhoto(VkApi vkApi) {
         super(vkApi);
     }

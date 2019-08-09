@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.board;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Board.
@@ -24,8 +24,8 @@ public class Board extends MethodObject {
     public final static String restoreComment = "restoreComment";
     public final static String unfixTopic = "unfixTopic";
 
-    public Board(VkApi vkApi) {
-        super(vkApi);
+    public Board(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "board";
     }
 }

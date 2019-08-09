@@ -1,4 +1,4 @@
-package com.github.heatalways.longPollAPI.UserLongPoll;
+package com.github.heatalways.longPollAPI.userLongPoll;
 
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.VkApi;
@@ -40,7 +40,7 @@ public class UserLongPollApi extends LongPollObject {
     }
 
     @Override
-    protected void bodyOfThread() {
+    public void makeRequest() {
         String url = "https://" + server +
                 "?act=a_check&key=" + key +
                 "&ts=" + ts +

@@ -12,7 +12,12 @@ import java.io.UnsupportedEncodingException;
  *
  */
 public class BodyOfRequest {
-    //addRule
+    /**
+     * Добавляет правило в поток
+     * @param url URL, по которому SDK обращается к API VK
+     * @param json правило в формате JSON
+     * @return ответ от сервера (успех/ошибка)
+     */
     public static String addRule(String url, String json) {
         try {
             StringEntity stringEntity = new StringEntity(json);
@@ -23,8 +28,12 @@ public class BodyOfRequest {
         return null;
     }
 
-
-    //deleteRule
+    /**
+     * Удаляет правило из потока
+     * @param url URL, по которому SDK обращается к API VK
+     * @param json метка в формате JSON
+     * @return ответ от сервера (успех/ошибка)
+     */
     public static String deleteRule(String url, String json) {
         try {
             StringEntity stringEntity = new StringEntity(json);

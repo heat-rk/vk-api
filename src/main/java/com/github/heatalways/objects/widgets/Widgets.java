@@ -1,6 +1,6 @@
 package com.github.heatalways.objects.widgets;
 
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 import com.github.heatalways.objects.MethodObject;
 
 /**
@@ -13,7 +13,7 @@ public class Widgets extends MethodObject {
     public final static String getComments = "getComments";
     public final static String getPages = "getPages";
 
-    public Widgets(VkApi vkApi) {
-        super(vkApi);
+    public Widgets(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
     }
 }

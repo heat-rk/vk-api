@@ -1,6 +1,6 @@
 package com.github.heatalways.objects;
 
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.utils.Request;
 
@@ -12,10 +12,10 @@ import com.github.heatalways.utils.Request;
 public class MethodObject {
     private String method;
     private String[] params;
-    private final VkApi vkApi;
+    private final VkAuthInterface vkAuthInterface;
     protected String object;
-    protected MethodObject(VkApi vkApi) {
-        this.vkApi = vkApi;
+    protected MethodObject(VkAuthInterface vkAuthInterface) {
+        this.vkAuthInterface = vkAuthInterface;
     }
 
     /**
@@ -40,10 +40,10 @@ public class MethodObject {
 
     /**
      * Получение результата
-     * @return объект класса JsonHandler
+     * @return ответ от сервера в формате JSON
      */
     public JsonHandler execute() {
-        String url = vkApi.getFinalURL().get(object + "." + method,
+        String url = vkAuthInterface.getURLHandler().get(object + "." + method,
                 params);
         return new JsonHandler(Request.get(url));
     }

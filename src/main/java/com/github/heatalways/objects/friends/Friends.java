@@ -1,6 +1,6 @@
 package com.github.heatalways.objects.friends;
 
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 import com.github.heatalways.objects.MethodObject;
 
 /**
@@ -29,8 +29,8 @@ public class Friends extends MethodObject {
     public final static String getSuggestions = "getSuggestions";
     public final static String search = "search";
 
-    public Friends(VkApi vkApi) {
-        super(vkApi);
+    public Friends(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "friends";
     }
 }

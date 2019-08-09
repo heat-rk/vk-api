@@ -1,6 +1,6 @@
 package com.github.heatalways.objects.account;
 
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 import com.github.heatalways.objects.MethodObject;
 
 /**
@@ -30,8 +30,8 @@ public class Account extends MethodObject {
     public final static String unban = "unban";
     public final static String unregisterDevice = "unregisterDevice";
 
-    public Account(VkApi vkApi) {
-        super(vkApi);
+    public Account(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "account";
     }
 }

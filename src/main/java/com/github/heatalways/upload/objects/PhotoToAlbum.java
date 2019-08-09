@@ -12,11 +12,15 @@ import java.io.File;
 /**
  * Класс для загрузки фото в определенный альбом.
  * @author heat"kazyxanovr1@gmail.com"
- *
  */
 public class PhotoToAlbum extends UploadObject {
     private String group_id;
     private String album_id;
+
+    /**
+     * Конструктор, принимающий в качестве параметра объект класса VkApi
+     * @param vkApi объект класса VkApi
+     */
     public PhotoToAlbum(VkApi vkApi) {
         super(vkApi);
     }

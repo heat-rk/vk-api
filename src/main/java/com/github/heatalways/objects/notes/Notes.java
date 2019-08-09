@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.notes;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Notes.
@@ -21,8 +21,8 @@ public class Notes extends MethodObject {
     public final static String getComments = "getComments";
     public final static String restoreComment = "restoreComment";
 
-    public Notes(VkApi vkApi) {
-        super(vkApi);
+    public Notes(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "notes";
     }
 }

@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.orders;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Orders.
@@ -19,8 +19,8 @@ public class Orders extends MethodObject {
     public final static String getUserSubscriptions = "getUserSubscriptions";
     public final static String updateSubscription = "updateSubscription";
 
-    public Orders(VkApi vkApi) {
-        super(vkApi);
+    public Orders(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "orders";
     }
 }

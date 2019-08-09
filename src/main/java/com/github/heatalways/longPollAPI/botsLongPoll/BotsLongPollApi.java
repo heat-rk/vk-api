@@ -1,4 +1,4 @@
-package com.github.heatalways.longPollAPI.BotsLongPoll;
+package com.github.heatalways.longPollAPI.botsLongPoll;
 
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.VkApi;
@@ -22,15 +22,15 @@ public class BotsLongPollApi extends LongPollObject {
      */
     public BotsLongPollApi(VkApi vkApi, String group_id, int wait) {
         this.wait = wait;
-        JsonHandler response = vkApi.groups.method(Groups.getLongPollServer).params(
-                "group_id=" + group_id).execute();
+        JsonHandler response = vkApi.groups.method(Groups.getLongPollServer)
+                .params("group_id=" + group_id).execute();
         server = response.get("server").toString();
         key = response.get("key").toString();
         ts = response.get("ts").toString();
     }
 
     @Override
-    protected void bodyOfThread() {
+    public void makeRequest() {
         String url = server +
                 "?act=a_check&key=" + key +
                 "&ts=" + ts +
@@ -40,6 +40,10 @@ public class BotsLongPollApi extends LongPollObject {
         check(response.get("updates"));
     }
 
+    /**
+     * Проверяет, к какому событию относится ответ
+     * @param updates ответ от сервера
+     */
     private void check(JsonHandler updates) {
         if (updates.toArray().length > 0) {
             for (JsonHandler event : updates.toArray()) {

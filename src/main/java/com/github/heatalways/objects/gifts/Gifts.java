@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.gifts;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Gifts.
@@ -12,8 +12,8 @@ import com.github.heatalways.VkApi;
 public class Gifts extends MethodObject {
     public final static String get = "get";
 
-    public Gifts(VkApi vkApi) {
-        super(vkApi);
+    public Gifts(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "gifts";
     }
 }

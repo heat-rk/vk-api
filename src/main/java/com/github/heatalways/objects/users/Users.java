@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.users;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Users.
@@ -17,8 +17,8 @@ public class Users extends MethodObject {
     public final static String report = "report";
     public final static String search = "search";
 
-    public Users(VkApi vkApi) {
-        super(vkApi);
+    public Users(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "users";
     }
 }

@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.wall;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Wall.
@@ -33,8 +33,8 @@ public class Wall extends MethodObject {
     public final static String search = "search";
     public final static String unpin = "unpin";
 
-    public Wall(VkApi vkApi) {
-        super(vkApi);
+    public Wall(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "wall";
     }
 }

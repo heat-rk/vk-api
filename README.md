@@ -13,7 +13,7 @@ https://heatalways.github.io/vkapi/
 * [Java-Websocket](https://github.com/TooTallNate/Java-WebSocket) версия 1.3.9
 
 # Maven зависимость
-[![Maven Central](https://img.shields.io/badge/Maven%20Central-2.3.0-green.svg)](https://mvnrepository.com/artifact/com.github.heatalways/api)
+[![Maven Central](https://img.shields.io/badge/Maven%20Central-2.4.6-green.svg)](https://mvnrepository.com/artifact/com.github.heatalways/api)
 ```xml
         <dependency>
             <groupId>com.github.heatalways</groupId>
@@ -61,7 +61,7 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/vkAuth/VkAuth.html
 ```java
         VkAuth vkAuth = new VkAuth().setAccessToken(ACCESS_TOKEN).setClientSecret(CLIENT_SECRET);
 ```
-Если вам нужно изменить версию API (5.101 по умолчанию), то следует вызвать метод "setVerison(<версия>)"
+Если вам нужно изменить версию API (5.101 по умолчанию) или язык API("ru" по умолчанию), то следует вызвать метод "setVerison(<версия>)" или "setLanguage(<язык>)" соответственно.
 ```java
         VkAuth vkAuth = new VkAuth().setAccessToken(ACCESS_TOKEN).setVerison("5.101");
 ```
@@ -78,11 +78,10 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/VkApi.html
 
 Для того, чтобы вызвать метод, вам нужно обратиться к нему
 ```java
-        vkApi.PREFIX.method(OBJECT_CLASS.METHOD_NAME).params(PARAMS).execute();
+        vkApi.PREFIX.method(METHOD_NAME).params(PARAMS).execute();
 ```
-* OBJECT - префикс метода (account, users, friends...)
-* OBJECT_CLASS - класс объекта
-* METHOD_NAME - имя метода
+* PREFIX - префикс метода (account, users, friends...)
+* METHOD_NAME - имя метода: "users.get", Users.get... Допускаются оба варианта
 * PARAMS - параметры типа String: "param1=value1","param2=value2"
 
 Пример
@@ -129,9 +128,17 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/longPollAPI/BotsLongPollApi.htm
             public void METHOD(JsonHandler object) {
                 //some code...
             }
-        }).start();
+        });
 ```
 Вы переопределяете нужные вам методы, на которые будут приходить сообщения в формате JSON.
+После чего вы можете либо сделать запрос к BotsLongPollApi
+```java
+        botsLongPollApi.makeRequest();
+```
+Либо запустить процесс, который будет работать до тех пор, пока вы принудительно не завершите его
+```java
+        botsLongPollApi.start();
+```
 Более подробную информацию можно найти [здесь](https://vk.com/dev/bots_longpoll).
 
 ## User Long Poll API
@@ -152,9 +159,17 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/longPollAPI/UserLongPollApi.htm
             public void onResponse(JsonHandler response) {
                 //some code...
             }
-        }).start();
+        });
 ```
 Вы переопределяете метод "onResponse", на который будут приходить сообщения в формате JSON.
+После чего вы можете либо сделать запрос к UserLongPollApi
+```java
+        userLongPollApi.makeRequest();
+```
+Либо запустить процесс, который будет работать до тех пор, пока вы принудительно не завершите его
+```java
+        userLongPollApi.start();
+```
 Более подробную информацию можно найти [здесь](https://vk.com/dev/using_longpoll).
 
 # Streaming API

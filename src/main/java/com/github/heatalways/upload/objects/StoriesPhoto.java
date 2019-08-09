@@ -11,9 +11,12 @@ import java.io.File;
 /**
  * Класс для загрузки фото в историю.
  * @author heat"kazyxanovr1@gmail.com"
- *
  */
 public class StoriesPhoto extends UploadObject {
+    /**
+     * Конструктор, принимающий в качестве параметра объект класса VkApi
+     * @param vkApi объект класса VkApi
+     */
     public StoriesPhoto(VkApi vkApi) {
         super(vkApi);
     }

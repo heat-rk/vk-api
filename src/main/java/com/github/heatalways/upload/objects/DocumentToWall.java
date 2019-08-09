@@ -13,9 +13,13 @@ import java.io.File;
 /**
  * Класс для загрузки документа на стену.
  * @author heat"kazyxanovr1@gmail.com"
- *
  */
 public class DocumentToWall extends UploadObject {
+
+    /**
+     * Конструктор, принимающий в качестве параметра объект класса VkApi
+     * @param vkApi объект класса VkApi
+     */
     public DocumentToWall(VkApi vkApi) {
         super(vkApi);
     }

@@ -13,10 +13,14 @@ import java.io.File;
 /**
  * Класс для загрузки фото в сообщение.
  * @author heat"kazyxanovr1@gmail.com"
- *
  */
 public class PhotoToMessage extends UploadObject {
     private String peer_id;
+
+    /**
+     * Конструктор, принимающий в качестве параметра объект класса VkApi
+     * @param vkApi объект класса VkApi
+     */
     public PhotoToMessage(VkApi vkApi) {
         super(vkApi);
     }

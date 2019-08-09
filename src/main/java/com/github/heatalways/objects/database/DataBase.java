@@ -1,6 +1,6 @@
 package com.github.heatalways.objects.database;
 
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 import com.github.heatalways.objects.MethodObject;
 
 /**
@@ -21,8 +21,8 @@ public class DataBase extends MethodObject {
     public final static String getSchools = "getSchools";
     public final static String getUniversities = "getUniversities";
 
-    public DataBase(VkApi vkApi) {
-        super(vkApi);
+    public DataBase(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "database";
     }
 }

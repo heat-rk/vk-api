@@ -1,6 +1,6 @@
 package com.github.heatalways.objects.messages;
 
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 import com.github.heatalways.objects.MethodObject;
 
 /**
@@ -49,8 +49,8 @@ public class Messages extends MethodObject {
     public final static String setChatPhoto = "setChatPhoto";
     public final static String unpin = "unpin";
 
-    public Messages(VkApi vkApi) {
-        super(vkApi);
+    public Messages(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "messages";
     }
 }

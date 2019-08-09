@@ -13,9 +13,12 @@ import java.io.File;
 /**
  * Класс для загрузки фото чата.
  * @author heat"kazyxanovr1@gmail.com"
- *
  */
 public class ChatPhoto extends UploadObject {
+    /**
+     * Конструктор, принимающий в качестве параметра объект класса VkApi
+     * @param vkApi объект класса VkApi
+     */
     public ChatPhoto(VkApi vkApi) {
         super(vkApi);
     }

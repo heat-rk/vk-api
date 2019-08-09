@@ -1,6 +1,6 @@
 package com.github.heatalways.objects.secure;
 
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 import com.github.heatalways.objects.MethodObject;
 
 /**
@@ -20,8 +20,8 @@ public class Secure extends MethodObject {
     public final static String sendSMSNotification = "sendSMSNotification";
     public final static String setCounter = "setCounter";
 
-    public Secure(VkApi vkApi) {
-        super(vkApi);
+    public Secure(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "secure";
     }
 }

@@ -1,6 +1,6 @@
 package com.github.heatalways.objects.search;
 
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 import com.github.heatalways.objects.MethodObject;
 
 /**
@@ -12,8 +12,8 @@ import com.github.heatalways.objects.MethodObject;
 public class Search extends MethodObject {
     public final static String getHints = "getHints";
 
-    public Search(VkApi vkApi) {
-        super(vkApi);
+    public Search(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "search";
     }
 }

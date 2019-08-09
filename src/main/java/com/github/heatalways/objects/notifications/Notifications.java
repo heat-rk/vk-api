@@ -1,6 +1,6 @@
 package com.github.heatalways.objects.notifications;
 
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 import com.github.heatalways.objects.MethodObject;
 
 /**
@@ -14,8 +14,8 @@ public class Notifications extends MethodObject {
     public final static String markAsViewed = "markAsViewed";
     public final static String sendMessage = "sendMessage";
 
-    public Notifications(VkApi vkApi) {
-        super(vkApi);
+    public Notifications(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "notifications";
     }
 }

@@ -1,4 +1,4 @@
-package com.github.heatalways.longPollAPI.UserLongPoll;
+package com.github.heatalways.longPollAPI.userLongPoll;
 
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.longPollAPI.MessageHandlerObject;

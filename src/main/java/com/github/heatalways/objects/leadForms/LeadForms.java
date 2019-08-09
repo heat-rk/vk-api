@@ -1,6 +1,6 @@
 package com.github.heatalways.objects.leadForms;
 
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 import com.github.heatalways.objects.MethodObject;
 
 /**
@@ -18,8 +18,8 @@ public class LeadForms extends MethodObject {
     public final static String list = "list";
     public final static String update = "update";
 
-    public LeadForms(VkApi vkApi) {
-        super(vkApi);
+    public LeadForms(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "leadForms";
     }
 }

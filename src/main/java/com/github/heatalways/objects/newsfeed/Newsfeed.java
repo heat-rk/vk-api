@@ -1,6 +1,6 @@
 package com.github.heatalways.objects.newsfeed;
 
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 import com.github.heatalways.objects.MethodObject;
 
 /**
@@ -27,8 +27,8 @@ public class Newsfeed extends MethodObject {
     public final static String unignoreItem = "unignoreItem";
     public final static String unsubscribe = "unsubscribe";
 
-    public Newsfeed(VkApi vkApi) {
-        super(vkApi);
+    public Newsfeed(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "newsfeed";
     }
 }

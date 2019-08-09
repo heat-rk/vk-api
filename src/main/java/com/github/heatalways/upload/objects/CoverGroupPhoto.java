@@ -12,9 +12,12 @@ import java.io.File;
 /**
  * Класс для загрузки обложки группы.
  * @author heat"kazyxanovr1@gmail.com"
- *
  */
 public class CoverGroupPhoto extends UploadObject {
+    /**
+     * Конструктор, принимающий в качестве параметра объект класса VkApi
+     * @param vkApi объект класса VkApi
+     */
     public CoverGroupPhoto(VkApi vkApi) {
         super(vkApi);
     }

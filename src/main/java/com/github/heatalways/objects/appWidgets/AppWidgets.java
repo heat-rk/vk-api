@@ -1,6 +1,6 @@
 package com.github.heatalways.objects.appWidgets;
 
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 import com.github.heatalways.objects.MethodObject;
 
 /**
@@ -19,8 +19,8 @@ public class AppWidgets extends MethodObject {
     public final static String saveGroupImage = "saveGroupImage";
     public final static String update = "update";
 
-    public AppWidgets(VkApi vkApi) {
-        super(vkApi);
+    public AppWidgets(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "appWidgets";
     }
 }

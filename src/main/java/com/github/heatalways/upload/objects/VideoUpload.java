@@ -13,9 +13,12 @@ import java.io.File;
 /**
  * Класс для загрузки видео.
  * @author heat"kazyxanovr1@gmail.com"
- *
  */
 public class VideoUpload extends UploadObject {
+    /**
+     * Конструктор, принимающий в качестве параметра объект класса VkApi
+     * @param vkApi объект класса VkApi
+     */
     public VideoUpload(VkApi vkApi) {
         super(vkApi);
     }

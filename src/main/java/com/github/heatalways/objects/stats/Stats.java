@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.stats;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Stats.
@@ -14,8 +14,8 @@ public class Stats extends MethodObject {
     public final static String getPostReach = "getPostReach";
     public final static String trackVisitor = "trackVisitor";
 
-    public Stats(VkApi vkApi) {
-        super(vkApi);
+    public Stats(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "stats";
     }
 }

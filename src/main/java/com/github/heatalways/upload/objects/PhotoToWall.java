@@ -13,10 +13,14 @@ import java.io.File;
 /**
  * Класс для загрузки фото на стену.
  * @author heat"kazyxanovr1@gmail.com"
- *
  */
 public class PhotoToWall extends UploadObject {
     private String group_id;
+
+    /**
+     * Конструктор, принимающий в качестве параметра объект класса VkApi
+     * @param vkApi объект класса VkApi
+     */
     public PhotoToWall(VkApi vkApi) {
         super(vkApi);
     }

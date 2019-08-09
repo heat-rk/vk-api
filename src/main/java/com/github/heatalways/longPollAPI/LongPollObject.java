@@ -23,21 +23,21 @@ public class LongPollObject {
     }
 
     /**
-     * Запуск потока
+     * Запуск потока (запросы к серверу на длительной основе)
      */
     public void start() {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 while (true) {
-                    bodyOfThread();
+                    makeRequest();
                 }
             }
         }).start();
     }
 
     /**
-     * Инициализация тела потока
+     * Запрос к серверу
      */
-    protected void bodyOfThread() {}
+    public void makeRequest() {}
 }

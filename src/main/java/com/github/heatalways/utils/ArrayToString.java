@@ -15,7 +15,7 @@ public class ArrayToString {
             StringBuilder str = new StringBuilder();
             str.append(values[0]);
             for (int i = 1; i < values.length; i++) {
-                str.append("&" + values[i]);
+                str.append("&").append(values[i]);
             }
             return str.toString();
         } catch (ArrayIndexOutOfBoundsException e) {

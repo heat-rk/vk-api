@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.photos;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Photos.
@@ -58,8 +58,8 @@ public class Photos extends MethodObject {
     public final static String search = "search";
 
 
-    public Photos(VkApi vkApi) {
-        super(vkApi);
+    public Photos(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "photos";
     }
 }

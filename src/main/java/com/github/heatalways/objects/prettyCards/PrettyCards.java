@@ -1,6 +1,6 @@
 package com.github.heatalways.objects.prettyCards;
 
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 import com.github.heatalways.objects.MethodObject;
 
 /**
@@ -17,8 +17,8 @@ public class PrettyCards extends MethodObject {
     public final static String getById = "getById";
     public final static String getUploadURL = "getUploadURL";
 
-    public PrettyCards(VkApi vkApi) {
-        super(vkApi);
+    public PrettyCards(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "prettyCards";
     }
 }

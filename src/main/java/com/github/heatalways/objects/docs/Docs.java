@@ -1,7 +1,7 @@
 package com.github.heatalways.objects.docs;
 
 import com.github.heatalways.objects.MethodObject;
-import com.github.heatalways.VkApi;
+import com.github.heatalways.vkAuth.VkAuthInterface;
 
 /**
  * Класс для работы с методами объекта Docs.
@@ -22,8 +22,8 @@ public class Docs extends MethodObject {
     public final static String save = "save";
     public final static String search = "search";
 
-    public Docs(VkApi vkApi) {
-        super(vkApi);
+    public Docs(VkAuthInterface vkAuthInterface) {
+        super(vkAuthInterface);
         object = "docs";
     }
 }

@@ -2,6 +2,7 @@ package com.github.heatalways;
 
 import com.github.heatalways.objects.account.Account;
 import com.github.heatalways.objects.appWidgets.AppWidgets;
+import com.github.heatalways.objects.audio.Audio;
 import com.github.heatalways.objects.database.DataBase;
 import com.github.heatalways.objects.friends.Friends;
 import com.github.heatalways.objects.leadForms.LeadForms;
@@ -36,7 +37,6 @@ import com.github.heatalways.objects.utils.Utils;
 import com.github.heatalways.objects.video.Video;
 import com.github.heatalways.objects.wall.Wall;
 import com.github.heatalways.upload.Upload;
-import com.github.heatalways.utils.FinalURL;
 import com.github.heatalways.vkAuth.VkAuth;
 
 import java.io.IOException;
@@ -46,49 +46,43 @@ import java.io.IOException;
  * @author heat"kazyxanovr1@gmail.com"
  */
 public class VkApi {
-    private String secret;
-    private String access_token;
-    private final String language = "ru";
-    private String version;
-
-    private final FinalURL finalURL;
-
-    public final Users users = new Users(this);
-    public final Account account = new Account(this);
-    public final AppWidgets appWidgets = new AppWidgets(this);
-    public final Apps apps = new Apps(this);
-    public final Board board = new Board(this);
-    public final DataBase dataBase = new DataBase(this);
-    public final Docs docs = new Docs(this);
-    public final Fave fave = new Fave(this);
-    public final Friends friends = new Friends(this);
-    public final Gifts gifts = new Gifts(this);
-    public final Groups groups = new Groups(this);
-    public final Leads leads = new Leads(this);
-    public final Likes likes = new Likes(this);
-    public final Market market = new Market(this);
-    public final Messages messages = new Messages(this);
-    public final Newsfeed newsfeed = new Newsfeed(this);
-    public final Notes notes = new Notes(this);
-    public final Notifications notifications = new Notifications(this);
-    public final Pages pages = new Pages(this);
-    public final Photos photos = new Photos(this);
-    public final Polls polls = new Polls(this);
-    public final Search search = new Search(this);
-    public final Secure secure = new Secure(this);
-    public final Stats stats = new Stats(this);
-    public final Status status = new Status(this);
-    public final Storage storage = new Storage(this);
-    public final Utils utils = new Utils(this);
-    public final Video video = new Video(this);
-    public final LeadForms leadForms = new LeadForms(this);
-    public final PrettyCards prettyCards = new PrettyCards(this);
-    public final Stories stories = new Stories(this);
-    public final Streaming streaming = new Streaming(this);
-    public final Orders orders = new Orders(this);
-    public final Wall wall = new Wall(this);
-    public final Widgets widgets = new Widgets(this);
-    public final Upload upload = new Upload(this);
+    public final Users users;
+    public final Account account;
+    public final AppWidgets appWidgets;
+    public final Apps apps;
+    public final Board board;
+    public final DataBase dataBase;
+    public final Docs docs;
+    public final Fave fave;
+    public final Friends friends;
+    public final Gifts gifts;
+    public final Groups groups;
+    public final Leads leads;
+    public final Likes likes;
+    public final Market market;
+    public final Messages messages;
+    public final Newsfeed newsfeed;
+    public final Notes notes;
+    public final Notifications notifications;
+    public final Pages pages;
+    public final Photos photos;
+    public final Polls polls;
+    public final Search search;
+    public final Secure secure;
+    public final Stats stats;
+    public final Status status;
+    public final Storage storage;
+    public final Utils utils;
+    public final Audio audio;
+    public final Video video;
+    public final LeadForms leadForms;
+    public final PrettyCards prettyCards;
+    public final Stories stories;
+    public final Streaming streaming;
+    public final Orders orders;
+    public final Wall wall;
+    public final Widgets widgets;
+    public final Upload upload;
 
     /**
      * Создание объекта класса VkApi, используя объект класса авторизации
@@ -98,34 +92,47 @@ public class VkApi {
      */
     public VkApi(VkAuth auth) throws IOException {
         try {
-            finalURL = new FinalURL(this);
-            version = auth.getVersion();
+            users = new Users(auth);
+            account = new Account(auth);
+            appWidgets = new AppWidgets(auth);
+            apps = new Apps(auth);
+            board = new Board(auth);
+            dataBase = new DataBase(auth);
+            docs = new Docs(auth);
+            fave = new Fave(auth);
+            friends = new Friends(auth);
+            gifts = new Gifts(auth);
+            groups = new Groups(auth);
+            leads = new Leads(auth);
+            likes = new Likes(auth);
+            market = new Market(auth);
+            messages = new Messages(auth);
+            newsfeed = new Newsfeed(auth);
+            notes = new Notes(auth);
+            notifications = new Notifications(auth);
+            pages = new Pages(auth);
+            photos = new Photos(auth);
+            polls = new Polls(auth);
+            search = new Search(auth);
+            secure = new Secure(auth);
+            stats = new Stats(auth);
+            status = new Status(auth);
+            storage = new Storage(auth);
+            utils = new Utils(auth);
+            audio = new Audio(auth);
+            video = new Video(auth);
+            leadForms = new LeadForms(auth);
+            prettyCards = new PrettyCards(auth);
+            stories = new Stories(auth);
+            streaming = new Streaming(auth);
+            orders = new Orders(auth);
+            wall = new Wall(auth);
+            widgets = new Widgets(auth);
+            upload = new Upload(this);
+
             auth.authorize();
-            this.access_token = auth.getAccessToken();
-            this.secret = auth.getClientSecret();
         } catch (IOException e) {
             throw new IOException(e.getMessage());
         }
-    }
-
-    public String getBaseUrl() {
-        String url = "https://api.vk.com/method/!METHOD_NAME?!PARAMETERS&access_token=" + access_token +
-                "&client_secret=!SECRET&v=" + version +
-                "&language=" + language;
-        if (secret != null) {
-            url = url.replace("!SECRET", secret);
-        } else {
-            url = url.replace("&client_secret=!SECRET", "");
-        }
-        return url;
-    }
-    public FinalURL getFinalURL() {
-        return finalURL;
-    }
-    public String getLanguage() {
-        return language;
-    }
-    public String getVersion() {
-        return version;
     }
 }
