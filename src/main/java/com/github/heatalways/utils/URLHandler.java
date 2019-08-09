@@ -40,7 +40,7 @@ public class URLHandler {
     /**
      * Получение URL, предназначенного для дальнейшего получения сервисного ключа доступа (access token) с помощью Client credentials flow
      * @param client_id идентификатор Вашего приложения
-     * @param client_secret секретный ключ Вашего приложения. Вы можете найти его в интерфейсе настроек, на странице https://vk.com/editapp?id={API_ID}&section=options
+     * @param client_secret секретный ключ Вашего приложения. Вы можете найти его в интерфейсе настроек
      * @return URL, предназначенный для дальнейшего получения сервисного ключа доступа (access token) с помощью Client credentials flow
      */
     public String getTokenUrl(String client_id, String client_secret) {
@@ -54,7 +54,7 @@ public class URLHandler {
     /**
      * Получение URL, предназначенного для дальнейшего получения ключа доступа (access token) с помощью Authorization Code Flow
      * @param client_id идентификатор Вашего приложения
-     * @param client_secret секретный ключ Вашего приложения. Вы можете найти его в интерфейсе настроек, на странице https://vk.com/editapp?id={API_ID}&section=options
+     * @param client_secret секретный ключ Вашего приложения. Вы можете найти его в интерфейсе настроек
      * @param redirect_uri URL, который использовался при получении code на первом этапе авторизации. Должен быть аналогичен переданному при авторизации
      * @param code временный код, полученный после прохождения авторизации
      * @return URL, предназначенный для дальнейшего получения сервисного ключа доступа (access token) с помощью Authorization Code Flow
