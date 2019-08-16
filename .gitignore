@@ -4,4 +4,5 @@ target/
 .idea
 *.iml
 *.asc
+*.versionsBackup
 src/**/Main.java

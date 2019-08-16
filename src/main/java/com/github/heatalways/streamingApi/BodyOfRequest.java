@@ -1,4 +1,4 @@
-package com.github.heatalways.streamingAPI;
+package com.github.heatalways.streamingApi;
 
 import org.apache.http.entity.StringEntity;
 import com.github.heatalways.utils.http.HttpDelete;

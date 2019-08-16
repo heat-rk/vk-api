@@ -113,6 +113,24 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/jsonHandler/JsonHandler.html
             System.out.println(user.get("first_name"));
         }
 ```
+
+# Callback API
+https://heatalways.github.io/vkapi/ru/heat/vkapi/callbackApi/CallbackAPI.html
+
+Шаблон подключения Callback API
+```java
+        CallbackAPI callbackAPI = new CallbackAPI().setCallbackMessageHandler(new CallbackMessageHandler() {
+            @Override
+            public void METHOD(JsonHandler object) {
+                //code...
+            }
+        });
+        callbackAPI.parse(MESSAGE);
+```
+Вы переопределяете нужные вам методы, на которые будут приходить сообщения в формате JSON.
+После чего вызываете медот "parse(MESSAGE)" (MESSAGE - сообщение от сервера), который парсит сообщение от сервера и вызывает нужные методы.
+Более подробную информацию можно найти [здесь](https://vk.com/dev/callback_api).
+
 # Long Poll API
 ## Bots Long Poll API
 https://heatalways.github.io/vkapi/ru/heat/vkapi/longPollAPI/BotsLongPollApi.html
@@ -122,7 +140,8 @@ https://heatalways.github.io/vkapi/ru/heat/vkapi/longPollAPI/BotsLongPollApi.htm
         BotsLongPollApi botsLongPollApi = new BotsLongPollApi(
                 VK_API, 
                 GROUP_ID, 
-                WAIT);
+                WAIT
+        );
         botsLongPollApi.setMessageHandler(new BotsMessageHandler() {
             @Override
             public void METHOD(JsonHandler object) {

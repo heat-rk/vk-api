@@ -7,5 +7,9 @@ public interface VkAuthInterface {
     String getVersion();
     String getClientSecret();
     String getAccessToken();
+    VkAuth setAccessToken(String token);
+    String getGroupId();
+    String getUserId();
+    void setUserId(String userId);
     String getLanguage();
 }

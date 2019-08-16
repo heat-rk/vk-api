@@ -1,8 +1,8 @@
-package com.github.heatalways.longPollAPI.userLongPoll;
+package com.github.heatalways.longPollApi.userLongPoll;
 
 import com.github.heatalways.jsonHandler.JsonHandler;
 import com.github.heatalways.VkApi;
-import com.github.heatalways.longPollAPI.LongPollObject;
+import com.github.heatalways.longPollApi.LongPollObject;
 import com.github.heatalways.objects.messages.Messages;
 import com.github.heatalways.utils.Request;
 

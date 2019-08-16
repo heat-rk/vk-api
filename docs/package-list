@@ -1,8 +1,9 @@
 com.github.heatalways
+com.github.heatalways.callbackApi
 com.github.heatalways.jsonHandler
-com.github.heatalways.longPollAPI
-com.github.heatalways.longPollAPI.botsLongPoll
-com.github.heatalways.longPollAPI.userLongPoll
+com.github.heatalways.longPollApi
+com.github.heatalways.longPollApi.botsLongPoll
+com.github.heatalways.longPollApi.userLongPoll
 com.github.heatalways.objects
 com.github.heatalways.objects.account
 com.github.heatalways.objects.ads
@@ -41,7 +42,7 @@ com.github.heatalways.objects.utils
 com.github.heatalways.objects.video
 com.github.heatalways.objects.wall
 com.github.heatalways.objects.widgets
-com.github.heatalways.streamingAPI
+com.github.heatalways.streamingApi
 com.github.heatalways.upload
 com.github.heatalways.upload.objects
 com.github.heatalways.utils

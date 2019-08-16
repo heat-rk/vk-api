@@ -9,7 +9,6 @@ import java.io.IOException;
 /**
  * Класс для обработки тела GET запроса к VK API.
  * @author heat"kazyxanovr1@gmail.com"
- *
  */
 public class Request {
     private final VkAuthInterface vkAuthInterface;
@@ -26,33 +25,51 @@ public class Request {
      * Получение сервисного ключа доступа (access token)
      * @param id идентификатор Вашего приложения
      * @param sec секретный ключ Вашего приложения. Вы можете найти его в интерфейсе настроек
-     * @return сервисный ключ доступа (access token)
      * @throws IOException ошибка. Указаны неверные данные (параметры) функции
      */
-    public String getAccessToken(String id, String sec) throws IOException {
+    public void getAccessToken(String id, String sec) throws IOException {
         String url = vkAuthInterface.getURLHandler().getTokenUrl(id, sec);
         JsonHandler r = new JsonHandler(HttpGet.get(url));
-        return r.get("access_token").toString();
+        vkAuthInterface.setAccessToken(r.get("access_token").toString());
     }
 
     /**
      * Получение ключа доступа (access token)
      * @param id идентификатор Вашего приложения
      * @param sec секретный ключ Вашего приложения. Вы можете найти его в интерфейсе настроек
-     * @param redirect_uri URL, который использовался при получении code на первом этапе авторизации. Должен быть аналогичен переданному при авторизации
+     * @param redirectUri URL, который использовался при получении code на первом этапе авторизации. Должен быть аналогичен переданному при авторизации
      * @param code временный код, полученный после прохождения авторизации
-     * @param group_id идентификатор группы, от имени которой будет осуществляться работа с API
-     * @return ключ доступа (access token)
+     * @param groupId идентификатор группы, от имени которой будет осуществляться работа с API
      * @throws IOException ошибка. Данные, переданные в качестве параметра не действительны!
      */
-    public String getAccessToken(String id, String sec, String redirect_uri, String code, String group_id) throws IOException {
-        String url = vkAuthInterface.getURLHandler().getTokenUrl(id, sec, redirect_uri, code);
+    public void getAccessToken(String id, String sec, String redirectUri, String code, String groupId) throws IOException {
+        String url = vkAuthInterface.getURLHandler().getTokenUrl(id, sec, redirectUri, code);
         JsonHandler r = new JsonHandler(HttpGet.get(url));
-        if (group_id == null) {
-            return r.get("access_token").toString();
+        if (groupId == null) {
+            vkAuthInterface.setAccessToken(r.get("access_token").toString());
+            vkAuthInterface.setUserId(r.get("user_id").toString());
         } else {
-            return r.get("access_token_" + group_id).toString();
+            vkAuthInterface.setAccessToken(r.get("access_token_" + groupId).toString());
         }
+    }
+
+    /**
+     * Получение ключа доступа (access token)
+     * @param clientId идентификатор Вашего приложения
+     * @param clientSecret секретный ключ Вашего приложения
+     * @param login логин
+     * @param password пароль
+     * @param scope права доступа, необходимые приложению
+     * @param twoFaSupported передайте 1, чтобы включить поддержку двухфакторной аутентификации
+     * @param code код подтверждения
+     * @param args дополнительные параметры
+     * @throws IOException ошибка. Данные, переданные в качестве параметра не действительны!
+     */
+    public void getAccessToken(String clientId, String clientSecret, String login, String password, String scope, int twoFaSupported, String code, String... args) throws IOException {
+        String url = vkAuthInterface.getURLHandler().getTokenUrl(clientId, clientSecret, login, password, scope, twoFaSupported, code, args);
+        JsonHandler r = new JsonHandler(HttpGet.get(url));
+        vkAuthInterface.setAccessToken(r.get("access_token").toString());
+        vkAuthInterface.setUserId(r.get("user_id").toString());
     }
 
     /**

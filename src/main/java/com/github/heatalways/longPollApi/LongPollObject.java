@@ -1,4 +1,6 @@
-package com.github.heatalways.longPollAPI;
+package com.github.heatalways.longPollApi;
+
+import com.github.heatalways.callbackApi.MessageHandlerObject;
 
 /**
  * Родительский класс для реализации работы с LongPoll API.

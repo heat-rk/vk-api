@@ -1,4 +1,4 @@
-package com.github.heatalways.streamingAPI;
+package com.github.heatalways.streamingApi;
 
 import com.github.heatalways.jsonHandler.JsonHandler;
 
