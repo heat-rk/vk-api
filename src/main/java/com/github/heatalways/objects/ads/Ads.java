@@ -55,7 +55,6 @@ public class Ads extends MethodObject {
     public final static String updateTargetGroup = "updateTargetGroup";
     public final static String updateTargetPixel = "updateTargetPixel";
 
-
     public Ads(VkAuthInterface vkAuthInterface) {
         super(vkAuthInterface);
         object = "ads";
