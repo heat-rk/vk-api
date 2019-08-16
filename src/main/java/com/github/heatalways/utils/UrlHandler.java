@@ -6,14 +6,14 @@ import com.github.heatalways.vkAuth.VkAuthInterface;
  * Класс для получения URL для дальнешей работы с ним.
  * @author heat"kazyxanovr1@gmail.com"
  */
-public class URLHandler {
+public class UrlHandler {
     private final VkAuthInterface vkAuthInterface;
 
     /**
      * Создание объекта класса URLHandler с помощью объекта класса VkAuthInterface
      * @param vkAuthInterface интерфейс класса VkAuth
      */
-    public URLHandler(VkAuthInterface vkAuthInterface) {
+    public UrlHandler(VkAuthInterface vkAuthInterface) {
         this.vkAuthInterface = vkAuthInterface;
     }
     /**

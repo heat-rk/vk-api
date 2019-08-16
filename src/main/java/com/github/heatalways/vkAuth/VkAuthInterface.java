@@ -1,9 +1,9 @@
 package com.github.heatalways.vkAuth;
 
-import com.github.heatalways.utils.URLHandler;
+import com.github.heatalways.utils.UrlHandler;
 
 public interface VkAuthInterface {
-    URLHandler getURLHandler();
+    UrlHandler getURLHandler();
     String getVersion();
     String getClientSecret();
     String getAccessToken();

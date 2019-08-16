@@ -1,6 +1,6 @@
 package com.github.heatalways.vkAuth;
 
-import com.github.heatalways.utils.URLHandler;
+import com.github.heatalways.utils.UrlHandler;
 import com.github.heatalways.utils.Request;
 
 import java.io.IOException;
@@ -28,7 +28,7 @@ public class VkAuth implements VkAuthInterface {
 
     private String version = "5.101";
     private String language = "ru";
-    private final URLHandler URLHandler = new URLHandler(this);
+    private final UrlHandler URLHandler = new UrlHandler(this);
     private int authorizationType = 0;
 
     /**
@@ -222,7 +222,7 @@ public class VkAuth implements VkAuthInterface {
      * @return объект класса URLHandler, предназначенный для работы с URL
      */
     @Override
-    public URLHandler getURLHandler() {
+    public UrlHandler getURLHandler() {
         return URLHandler;
     }
 

@@ -8,7 +8,7 @@ import com.github.heatalways.jsonHandler.JsonHandler;
  * Подробнее на https://vk.com/dev/callback_api
  * @author heat"kazyxanovr1@gmail.com"
  */
-public class CallbackAPI {
+public class CallbackApi {
     private CallbackMessageHandler callbackMessageHandler;
 
     /**
@@ -16,7 +16,7 @@ public class CallbackAPI {
      * @param callbackMessageHandler объект класса обработчика сообщений
      * @return объект класса CallbackAPI
      */
-    public CallbackAPI setCallbackMessageHandler(CallbackMessageHandler callbackMessageHandler) {
+    public CallbackApi setCallbackMessageHandler(CallbackMessageHandler callbackMessageHandler) {
         this.callbackMessageHandler = callbackMessageHandler;
         return this;
     }
